@@ -5,5 +5,5 @@ class Track < ApplicationRecord
   validates :description, presence: true
   validates :bpm, presence: true, numericality: {only_integer: true}
 
-
+  mount_uploader :track, TrackUploader
 end
