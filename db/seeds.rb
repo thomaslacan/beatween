@@ -16,10 +16,10 @@ puts "creating users"
 
 # USERS
 
-user1 = User.create!(username: "tomakman", first_name: "Thomas", last_name: "Lacan", email: "thomas@beatween.com", password: "mdpmdp", description: "Late 90's House music producer", photo: "sj44wrihgidsud3i0ynl")
-user2 = User.create!(username: "antoinecoconut", first_name: "Antoine", last_name: "Duvauchelle", email: "antoine@beatween.com", password: "mdpmdp", description: "Tech journalist, saxo player and masterpiece fullstack developer", photo: "ynmcx0pzk822pfir1fco")
-user3 = User.create!(username: "ghbozz", first_name: "Romain", last_name: "Sanson", email: "romain@beatween.com", password: "mdpmdp", description: "Sound engineer and masterpiece fullstack developer", photo: "ajzwuuchjypc2rp91fkt")
-user4 = User.create!(username: "Camel-light", first_name: "Damiano", last_name: "Rousselet", email: "damiano@beatween.com", password: "mdpmdp", description: "Hacker of all but women first ", photo: "jawad")
+user1 = User.create!(username: "tomakman", first_name: "Thomas", last_name: "Lacan", email: "thomas@beatween.com", password: "mdpmdp", description: "Late 90's House music producer", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535121305/sj44wrihgidsud3i0ynl.jpg")
+user2 = User.create!(username: "antoinecoconut", first_name: "Antoine", last_name: "Duvauchelle", email: "antoine@beatween.com", password: "mdpmdp", description: "Tech journalist, saxo player and masterpiece fullstack developer", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535118655/ajzwuuchjypc2rp91fkt.jpg")
+user3 = User.create!(username: "ghbozz", first_name: "Romain", last_name: "Sanson", email: "romain@beatween.com", password: "mdpmdp", description: "Sound engineer and masterpiece fullstack developer", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535118652/ynmcx0pzk822pfir1fco.jpg")
+user4 = User.create!(username: "Camel-light", first_name: "Damiano", last_name: "Rousselet", email: "damiano@beatween.com", password: "mdpmdp", description: "Hacker of all but women first ", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535118649/wxn7yc6fvlrvda9wof5g.jpg")
 
 
 #GENRES
@@ -38,37 +38,37 @@ genre8 = Genre.create!(name: "Techno")
 puts "creating songs"
 
 
-song1 = Song.create!(name: "Gin n Juice", description: "du gin & du jus ", bpm: 95, num_of_tracks: 23, duration: 198600, user_id: user4, genre_id: genre4, photo: "song1")
-song2 = Song.create!(name: "Love On The Beat", description: "For house music lovers", bpm: 142, num_of_tracks: 24, duration: 620000, user_id: user1, genre_id: genre1, photo: "song2")
-song3 = Song.create!(name: "Antisocial", description: "Rock rules motherfucker !!", bpm: 126, num_of_tracks: 20, duration: 410000, user_id: user2, genre_id: genre2, photo: "song3")
-song4 = Song.create!(name: "Bitches", description: "Bitches are my breakfast", bpm: 95, num_of_tracks: 18, duration: 210000, user_id: user4, genre_id: genre3, photo: "song4")
+song1 = Song.create!(name: "Gin n Juice", description: "du gin & du jus ", bpm: 95, num_of_tracks: 23, duration: 198600, user: user4, genre: genre4, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song1.jpg")
+song2 = Song.create!(name: "Love On The Beat", description: "For house music lovers", bpm: 142, num_of_tracks: 24, duration: 620000, user: user1, genre: genre1, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song2.jpg")
+song3 = Song.create!(name: "Antisocial", description: "Rock rules motherfucker !!", bpm: 126, num_of_tracks: 20, duration: 410000, user: user2, genre: genre2, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song3.jpg")
+song4 = Song.create!(name: "Bitches", description: "Bitches are my breakfast", bpm: 95, num_of_tracks: 18, duration: 210000, user: user4, genre: genre3, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song4.jpg")
 
 #TRACKS
 puts "creating tracks"
 
-track1 = Track.create!(user_id: user4, bpm: 100, description: "kick", track_url: "Audio_1_01" )
-track2 = Track.create!(user_id: user4, bpm: 100, description: "hat", track_url: "Audio_2_01" )
-track3 = Track.create!(user_id: user4, bpm: 100, description: "snare", track_url: "Audio_3_01" )
-track4 = Track.create!(user_id: user4, bpm: 100, description: "voice", track_url: "Audio_4_01" )
-track5 = Track.create!(user_id: user4, bpm: 100, description: "keyboard", track_url: "Audio_5_01" )
-track6 = Track.create!(user_id: user4, bpm: 100, description: "bass", track_url: "Audio_6_01" )
-track7 = Track.create!(user_id: user4, bpm: 100, description: "guitar", track_url: "Audio_7_01" )
-track8 = Track.create!(user_id: user4, bpm: 100, description: "clap", track_url: "Audio_8_01" )
-track9 = Track.create!(user_id: user4, bpm: 100, description: "fx", track_url: "Audio_9_01" )
-track10 = Track.create!(user_id: user4, bpm: 100, description: "ukulele", track_url: "Audio_10_01" )
-track11 = Track.create!(user_id: user4, bpm: 100, description: "saxo", track_url: "Audio_11_01" )
-track12 = Track.create!(user_id: user4, bpm: 100, description: "banjo", track_url: "Audio_12_01" )
-track13 = Track.create!(user_id: user4, bpm: 100, description: "bombard", track_url: "Audio_13_01" )
-track14 = Track.create!(user_id: user4, bpm: 100, description: "flute-traversiere", track_url: "Audio_14_01" )
-track15 = Track.create!(user_id: user4, bpm: 100, description: "cor", track_url: "Audio_15_01" )
-track16 = Track.create!(user_id: user4, bpm: 100, description: "kazu", track_url: "Audio_16_01" )
-track17 = Track.create!(user_id: user4, bpm: 100, description: "washboard", track_url: "Audio_17_01" )
-track18 = Track.create!(user_id: user4, bpm: 100, description: "clavecin", track_url: "Audio_18_01" )
-# track19 = Track.create!(user_id: user4, bpm: 100, description: "", track_url: "Audio_19_01" )
-track20 = Track.create!(user_id: user4, bpm: 100, description: "baton-de-riz", track_url: "Audio_20_01" )
-track21 = Track.create!(user_id: user4, bpm: 100, description: "wurlizer", track_url: "Audio_21_01" )
-track22 = Track.create!(user_id: user4, bpm: 100, description: "contrebass", track_url: "Audio_22_01" )
-track23 = Track.create!(user_id: user4, bpm: 100, description: "snap", track_url: "Audio_23_01" )
+track1 = Track.create!(user_id: user4, bpm: 100, description: "kick", track_url: "Audio_1_01", user: user4 )
+track2 = Track.create!(user_id: user4, bpm: 100, description: "hat", track_url: "Audio_2_01", user: user4 )
+track3 = Track.create!(user_id: user4, bpm: 100, description: "snare", track_url: "Audio_3_01", user: user4 )
+track4 = Track.create!(user_id: user4, bpm: 100, description: "voice", track_url: "Audio_4_01", user: user4 )
+track5 = Track.create!(user_id: user4, bpm: 100, description: "keyboard", track_url: "Audio_5_01", user: user4 )
+track6 = Track.create!(user_id: user4, bpm: 100, description: "bass", track_url: "Audio_6_01", user: user4 )
+track7 = Track.create!(user_id: user4, bpm: 100, description: "guitar", track_url: "Audio_7_01", user: user4 )
+track8 = Track.create!(user_id: user4, bpm: 100, description: "clap", track_url: "Audio_8_01", user: user4 )
+track9 = Track.create!(user_id: user4, bpm: 100, description: "fx", track_url: "Audio_9_01", user: user4 )
+track10 = Track.create!(user_id: user4, bpm: 100, description: "ukulele", track_url: "Audio_10_01", user: user4 )
+track11 = Track.create!(user_id: user4, bpm: 100, description: "saxo", track_url: "Audio_11_01", user: user4 )
+track12 = Track.create!(user_id: user4, bpm: 100, description: "banjo", track_url: "Audio_12_01", user: user4 )
+track13 = Track.create!(user_id: user4, bpm: 100, description: "bombard", track_url: "Audio_13_01", user: user4 )
+track14 = Track.create!(user_id: user4, bpm: 100, description: "flute-traversiere", track_url: "Audio_14_01", user: user4 )
+track15 = Track.create!(user_id: user4, bpm: 100, description: "cor", track_url: "Audio_15_01", user: user4 )
+track16 = Track.create!(user_id: user4, bpm: 100, description: "kazu", track_url: "Audio_16_01", user: user4 )
+track17 = Track.create!(user_id: user4, bpm: 100, description: "washboard", track_url: "Audio_17_01", user: user4 )
+track18 = Track.create!(user_id: user4, bpm: 100, description: "clavecin", track_url: "Audio_18_01", user: user4 )
+# track19 = Track.create!(user_id: user4, bpm: 100, description: "", track_url: "Audio_19_01", user: user4 )
+track20 = Track.create!(user_id: user4, bpm: 100, description: "baton-de-riz", track_url: "Audio_20_01", user: user4 )
+track21 = Track.create!(user_id: user4, bpm: 100, description: "wurlizer", track_url: "Audio_21_01", user: user4 )
+track22 = Track.create!(user_id: user4, bpm: 100, description: "contrebass", track_url: "Audio_22_01", user: user4 )
+track23 = Track.create!(user_id: user4, bpm: 100, description: "snap", track_url: "Audio_23_01", user: user4 )
 
 
 puts "creating songtracks"
