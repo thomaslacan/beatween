@@ -14,3 +14,7 @@ yarn-error.log
 .byebug_history
 .env*
 .env*
+config/environments/development.rb
+gsegsegs
+package.json
+yarn.lock
