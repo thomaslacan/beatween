@@ -1,0 +1,7 @@
+* [32mmaster                                          [m 0e131b1 [behind 7] Merge pull request #4 from thomaslacan/seeds-clean
+  [33mremotes/origin/HEAD                             [m -> origin/master
+  [33mremotes/origin/add-photo-to-user-and-song       [m 625c220 added photos to users and songs and track ids to tracks
+  [33mremotes/origin/adding-env                       [m 76db1c1 adding the dotenv
+  [33mremotes/origin/installing-cloudinary-carrierwave[m 5d35989 added cloudinary carrierwave and uploaders
+  [33mremotes/origin/master                           [m 8efdd29 Merge pull request #7 from thomaslacan/tom-userxp-song-view
+  [33mremotes/origin/seeds-clean                      [m 7ab9de4 seeds to test
