@@ -1,2 +1,24 @@
 <h1>Songs#new</h1>
 <p>Find me in app/views/songs/new.html.erb</p>
+
+<div class="container">
+    <div class="form-layout-container">
+     <div class="form-container-new">
+      <div class="form-content">
+        <%= simple_form_for @song do |f| %>
+          <%= f.input :name %>
+          <%#= f.select genre, collection: ["Abstract", "Acid Jazz"
+"Ambient", "Ballad", "Breakbeat", "Classic", "Country", "Dancehall", "Disco", "Deep House", "Downtempo", "Drum n bass", "Dub", "Electro", "Experimental", "Folk", "Funk", "Garage House", "Hardcore", "Hardrock", "Hip Hop", "House", "IDM", "Indie", "Italo Disco", "Jazz", "Minimal","Opera", "Progressive House", "Psy Trance", "Punk", "Reggaeton", "Rock & Roll", "Rnb", "Soul", "Techno" "Trance", "Trap", "Vocal"] %>
+          <%= f.input :description %>
+          <%= f.input f.input :bpm %>
+          <div class="group-times">
+          </div>
+          <div class="form-btn">
+            <%= f.submit "Add", class: "btn btn-primary" %>
+            <%= link_to 'Back to Songs', songs_path, class: 'btn btn-info' %>
+          </div>
+        <% end %>
+       </div>
+      </div>
+    </div>
+  </div>
