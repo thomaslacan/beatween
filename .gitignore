@@ -18,3 +18,4 @@ config/environments/development.rb
 gsegsegs
 package.json
 yarn.lock
+db/schema.rb
