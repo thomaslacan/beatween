@@ -1,0 +1,21 @@
+.single-track {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px auto;
+}
+
+.track-description {
+  width: 20%;
+}
+
+.track-sound {
+  width: 70%;
+}
+
+.track-user img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
