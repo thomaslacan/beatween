@@ -7,10 +7,13 @@
       <div class="form-content">
         <%= simple_form_for @song do |f| %>
           <%= f.input :name %>
-          <%#= f.select genre, collection: ["Abstract", "Acid Jazz"
-"Ambient", "Ballad", "Breakbeat", "Classic", "Country", "Dancehall", "Disco", "Deep House", "Downtempo", "Drum n bass", "Dub", "Electro", "Experimental", "Folk", "Funk", "Garage House", "Hardcore", "Hardrock", "Hip Hop", "House", "IDM", "Indie", "Italo Disco", "Jazz", "Minimal","Opera", "Progressive House", "Psy Trance", "Punk", "Reggaeton", "Rock & Roll", "Rnb", "Soul", "Techno" "Trance", "Trap", "Vocal"] %>
+          <div class="form-group string required song_genre">
+            <label class="form-control-label string required" for="song_genre">Genre <abbr title="required">*</abbr></label><input class="form-control string required" type="text" name="song[genre]" id="song_genre">
+          </div>
+
+
+
           <%= f.input :description %>
-          <%= f.input f.input :bpm %>
           <div class="group-times">
           </div>
           <div class="form-btn">
@@ -22,3 +25,46 @@
       </div>
     </div>
   </div>
+
+<div class="ui-widget">
+  <label for="tags">Tags: </label>
+  <input id="tags">
+</div>
+<% @genres = [] %>
+<% Genre.all.each do  |genre| %>
+  <% @genres << genre.name %>
+<% end %>
+
+<script>
+  $( function() {
+    var array = <%= @genres.inspect.html_safe %>;
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#song_genre" ).autocomplete({
+      source: array
+    });
+  } );
+  </script>
+
