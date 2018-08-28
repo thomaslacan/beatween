@@ -1,27 +1,35 @@
-
-<div class="card-css">
+<div class="song-card col-xs-12 col-sm-6 col-md-3">
   <%= link_to song_path(song) do %>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-       <div class="card grow" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path song.photo%>'); background-size: cover">
-        <div class="card-content">
-          <div class="card-category">
+    <div class="song-card-background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path song.photo%>'); background-size: cover">
+      <div class="song-card-content-wrapper">
+        <div class="song-card-content-bg-small">
+
+        </div>
+        <div class="song-card-content">
+          <div class="song-card-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i>
+          </div>
+          <div class="song-card-username">
+            <%= song.user.first_name %> <%= song.user.last_name %>
+          </div>
+          <div class="song-card-name">
             <%= song.name %>
           </div>
-        <div class="card-content">
-          <div class="card-category">
-            <%= song.user.username %> <span>(<%= song.bpm %>)</span>
-          </div>
-          <div class="card-description">
-            <%= song.duration %>
-            <%= song.genre.name%>
-          </div>
-          <div class="card-avatar"><%= cl_image_tag(song.user.photo, :width => 60, :height => 60, crop: 'fill', class: 'img-circle') %>
+          <div class="song-card-metada invisible">
+            <span class="song-card-bpm">
+              <i class="fas fa-heartbeat"></i> <%= song.bpm %>
+            </span>
+            <span class="song-card-duration">
+              <i class="fas fa-clock"></i> <%= song.duration %>
+            </span>
+            <span class="song-card-genre">
+              <i class="fas fa-music"></i> <%= song.genre.name%>
+            </span>
           </div>
         </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
 </div>
 
 
