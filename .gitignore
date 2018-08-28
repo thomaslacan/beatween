@@ -19,3 +19,4 @@ gsegsegs
 package.json
 yarn.lock
 db/schema.rb
+schema.rb
