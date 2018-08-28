@@ -1,8 +1,13 @@
-<h1>Songs#index</h1>
-<p>Find me in app/views/songs/index.html.erb</p>
-
-<div>
-  <% @songs.each do |song| %>
-    <%= song[:name] %>
-  <% end %>
+<div class="container">
+  <h2>
+    <div>.disc</div>
+    <div>over</div>
+  </h2>
+  <div class="card">
+    <div class="row">
+      <% @songs.each do |song| %>
+        <%= render 'card', song: song%>
+      <% end %>
+    </div>
+  </div>
 </div>
