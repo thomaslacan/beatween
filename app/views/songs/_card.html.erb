@@ -20,7 +20,7 @@
               <i class="fas fa-heartbeat"></i> <%= song.bpm %>
             </span>
             <span class="song-card-duration">
-              <i class="fas fa-clock"></i> <%= song.duration %>
+              <i class="fas fa-clock"></i> <%= @minutes %>:<%= @seconds.slice(0,2) %>
             </span>
             <span class="song-card-genre">
               <i class="fas fa-music"></i> <%= song.genre.name%>
