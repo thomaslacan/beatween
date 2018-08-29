@@ -8,6 +8,8 @@
       <% @songs.each do |song| %>
         <% @minutes = song.duration / 60000 %>
         <% @seconds = song.duration / 10000 % 60 %>
+        <% @stars = song.user.rating / 10 %>
+        <% @half_stars = song.user.rating % 10 / 5 %>
         <%= render 'card', song: song%>
       <% end %>
     </div>
