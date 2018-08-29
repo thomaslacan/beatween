@@ -27,6 +27,5 @@ allCards.forEach((card) => {
   });
 });
 
-toggleContent();
 
 export { toggleContent };

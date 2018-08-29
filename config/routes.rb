@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: 'songs#index', as: "discover"
   resources :songs, only: [:index, :show, :new, :create, :edit, :update] do
     resources :tracks, only: [:new, :create, :edit, :update, :destroy]
   end

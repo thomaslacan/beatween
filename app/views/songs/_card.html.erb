@@ -7,7 +7,12 @@
         </div>
         <div class="song-card-content">
           <div class="song-card-rating">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i>
+            <% @stars.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+            <% @half_stars.times do %>
+              <i class="fas fa-star-half"></i>
+            <% end %>
           </div>
           <div class="song-card-username">
             <%= song.user.first_name %> <%= song.user.last_name %>
@@ -20,7 +25,7 @@
               <i class="fas fa-heartbeat"></i> <%= song.bpm %>
             </span>
             <span class="song-card-duration">
-              <i class="fas fa-clock"></i> <%= song.duration %>
+              <i class="fas fa-clock"></i> <%= @minutes %>:<%= @seconds %>
             </span>
             <span class="song-card-genre">
               <i class="fas fa-music"></i> <%= song.genre.name%>
