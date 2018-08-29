@@ -7,10 +7,8 @@ class SongsController < ApplicationController
   end
 
   def show
-    duration = (@song.duration.to_f / 60000).to_s
-    split = duration.split(".")
-    @minutes = split[0]
-    @seconds = split[1]
+    @minutes = @song.duration / 60000
+    @seconds = @song.duration / 10000 % 60
   end
 
   def new
