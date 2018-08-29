@@ -3,8 +3,13 @@
     <div>.disc</div>
     <div>over</div>
   </div>
+  <%= link_to "#" do %>
+    <div id="search-button" class="purple-search">
+      <i class="fas fa-search"></i>
+    </div>
+  <% end %>
   <div class="card">
-    <div class="row">
+    <div class="row cards-board">
       <% @songs.each do |song| %>
         <% @minutes = song.duration / 60000 %>
         <% @seconds = song.duration / 10000 % 60 %>
@@ -12,6 +17,14 @@
         <% @half_stars = song.user.rating % 10 / 5 %>
         <%= render 'card', song: song%>
       <% end %>
+    </div>
+    <div id="search-bar" class="invisible">
+      <h4>Search</h4>
+      <p>Blablabla</p>
+      <h3>Genre</h3>
+      <p>blablabla</p>
+      <h3>Song rating</h3>
+      <p>blablabla</p>
     </div>
   </div>
 </div>
