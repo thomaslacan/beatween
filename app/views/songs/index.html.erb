@@ -1,30 +1,46 @@
 <div class="container">
   <div class="page-title">
-    <div>.disc</div>
-    <div>over</div>
+    <%= link_to songs_path do %>
+      <div>.disc</div>
+      <div>over</div>
+    <% end %>
   </div>
   <%= link_to "#" do %>
     <div id="search-button" class="purple-search">
       <i class="fas fa-search"></i>
     </div>
   <% end %>
-  <div class="card">
-    <div class="row cards-board">
-      <% @songs.each do |song| %>
-        <% @minutes = song.duration / 60000 %>
-        <% @seconds = song.duration / 10000 % 60 %>
-        <% @stars = song.user.rating / 10 %>
-        <% @half_stars = song.user.rating % 10 / 5 %>
-        <%= render 'card', song: song%>
-      <% end %>
+
+  <% if @songs.count == 0 %>
+    <h3>no results</h3>
+  <% else %>
+    <div class="card">
+      <div class="row cards-board">
+        <% @songs.each do |song| %>
+          <% @minutes = song.duration / 60000 %>
+          <% @seconds = song.duration / 10000 % 60 %>
+          <% @stars = song.user.rating / 10 %>
+          <% @half_stars = song.user.rating % 10 / 5 %>
+          <%= render 'card', song: song%>
+        <% end %>
+      </div>
+      <div id="search-bar" class="invisible">
+        <div class="forms-search">
+          <div>
+            <%= form_tag songs_path, method: :get do %>
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                id:"form-start",
+                placeholder: "Search a song, user, genre"
+              %>
+          </div>
+          <div>
+            <%= button_tag "Search" , class: "btn-search"%>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-    <div id="search-bar" class="invisible">
-      <h4>Search</h4>
-      <p>Blablabla</p>
-      <h3>Genre</h3>
-      <p>blablabla</p>
-      <h3>Song rating</h3>
-      <p>blablabla</p>
-    </div>
-  </div>
+  <% end %>
 </div>
