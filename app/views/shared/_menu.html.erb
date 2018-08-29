@@ -1,0 +1,30 @@
+<div id="menu-menu">
+  <div class="dropdown" id="main-menu">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+    <% if user_signed_in? %>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+        <div class="dropdown-item"><%= cl_image_tag current_user.photo, width: 50, height: 50, crop: :fill %>
+        </div>
+        <div class="dropdown-item"><%= link_to "Discover", songs_index_path %></div>
+        <div class="dropdown-item"><%= link_to "Profile", "#" %></div>
+        <div class="dropdown-item">
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="fa fa-sign-out"></i><%= t(".sign_out", default: "Log out") %>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+        <div class="dropdown-item">
+          <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
