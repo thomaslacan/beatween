@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates :rating, numericality: { only_integer: true }, inclusion: { in: 0..50 }
 
   mount_uploader :photo, PhotoUploader
 end
