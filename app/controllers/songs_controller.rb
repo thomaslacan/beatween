@@ -4,7 +4,11 @@ class SongsController < ApplicationController
   before_action :set_song, only: [ :show ]
 
   def index
-    @songs = policy_scope(Song)#.order(id: integer, name: string, description: text, bpm: integer, num_of_tracks: integer, duration: integer, user_id: integer, genre_id: integer, created_at: datetime, updated_at: datetime, photo: string)
+    if params[:query].present?
+      @songs = policy_scope(Song.global_search(params[:query]))
+    else
+      @songs = policy_scope(Song)
+    end
   end
 
   def show
