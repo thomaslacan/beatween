@@ -6,9 +6,8 @@
   <div class="card">
     <div class="row">
       <% @songs.each do |song| %>
-        <% split = (song.duration.to_f / 60000).to_s.split(".") %>
-        <% @minutes = split[0] %>
-        <% @seconds = split[1] %>
+        <% @minutes = song.duration / 60000 %>
+        <% @seconds = song.duration / 10000 % 60 %>
         <%= render 'card', song: song%>
       <% end %>
     </div>
