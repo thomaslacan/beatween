@@ -41,6 +41,10 @@ song1 = Song.create!(name: "Gin n Juice", description: "du gin & du jus ", bpm: 
 song2 = Song.create!(name: "Love On The Beat", description: "For house music lovers", bpm: 142, num_of_tracks: 24, duration: 620000, user: user1, genre: genre1, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song2.jpg")
 song3 = Song.create!(name: "Antisocial", description: "Rock rules motherfucker !!", bpm: 126, num_of_tracks: 20, duration: 410000, user: user2, genre: genre2, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song3.jpg")
 song4 = Song.create!(name: "Bitches", description: "Bitches are my breakfast", bpm: 95, num_of_tracks: 18, duration: 210000, user: user4, genre: genre3, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song4.jpg")
+song5 = Song.create!(name: "Rumors", description: "Fleatwood Mac", bpm: 112, num_of_tracks: 10, duration: 180333, user: user3, genre: genre8, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song5.jpg")
+song6 = Song.create!(name: "Rachmaninoff", description: "Symphony numero 2", bpm: 94, num_of_tracks: 14, duration: 215000, user: user2, genre: genre6, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song6.jpg")
+song7 = Song.create!(name: "Killer Elite", description: "Dragonforce from the dragons", bpm: 103, num_of_tracks: 17, duration: 195000, user: user1, genre: genre4, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song7.jpg")
+song8 = Song.create!(name: "Gerschwin", description: "Rhapsody in blue", bpm: 150, num_of_tracks: 13, duration: 233000, user: user3, genre: genre5, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song8.jpg")
 
 #TRACKS
 puts "creating tracks"
