@@ -1,0 +1,33 @@
+#menu-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+}
+
+#main-menu i {
+  font-size: 40px;
+}
+
+.dropdown-menu {
+  border: 0px solid #000;
+  padding: 20px;
+}
+
+.dropdown-menu img {
+  border-radius: 50%;
+}
+
+.dropdown-item {
+  margin: 10px auto;
+  font-weight: 200;
+}
+.dropdown-item a {
+  color: #000;
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+.dropdown-item a:hover {
+  opacity: 1;
+}

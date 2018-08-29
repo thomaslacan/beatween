@@ -1,4 +1,5 @@
 class SongsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   before_action :skip_authorization
   before_action :set_song, only: [ :show ]
 
