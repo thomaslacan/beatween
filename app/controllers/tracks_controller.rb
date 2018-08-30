@@ -7,14 +7,17 @@ class TracksController < ApplicationController
 
   def create
     @song_track = SongTrack.new
+    @track = Track.new(track_params)
+    @track.user = current_user
+    @track.save
     @song_track.track = @track
-    @song_track.song = params[:song_id]
-  end
-
-  def edit
-  end
-
-  def update
+    @song_track.song_id = params[:song_id]
+    @song_track.save
+    if @song_track.save
+      redirect_to songs_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -23,7 +26,7 @@ class TracksController < ApplicationController
 
   private
 
-  def booking_params
+  def track_params
     params.require(:track).permit(:song_id, :user_id, :description, :bpm)
   end
 end

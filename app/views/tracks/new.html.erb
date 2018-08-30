@@ -7,6 +7,8 @@
       <%= simple_form_for [@song, @track] do |f| %>
         <%= f.input :description %>
         <%= f.input :bpm %>
+        <%= f.input :track %>
+        <%= f.input :track_cache, as: :hidden %>
         <%= f.submit "Add", class: "btn btn-success" %>
       <% end %>
     </div>
