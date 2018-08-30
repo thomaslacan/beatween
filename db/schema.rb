@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_30_093106) do
+ActiveRecord::Schema.define(version: 2018_08_30_144533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,7 +71,9 @@ ActiveRecord::Schema.define(version: 2018_08_30_093106) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "track_url"
+    t.string "uploaded_file"
+    t.bigint "instrument_id"
+    t.index ["instrument_id"], name: "index_tracks_on_instrument_id"
     t.index ["user_id"], name: "index_tracks_on_user_id"
   end
 
@@ -98,5 +100,6 @@ ActiveRecord::Schema.define(version: 2018_08_30_093106) do
   add_foreign_key "song_tracks", "tracks"
   add_foreign_key "songs", "genres"
   add_foreign_key "songs", "users"
+  add_foreign_key "tracks", "instruments"
   add_foreign_key "tracks", "users"
 end
