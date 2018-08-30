@@ -33,9 +33,19 @@ class SongsController < ApplicationController
   end
 
   def edit
+    @user = current_user
+    @song = Song.find(params[:id])
+    if @song.user == @user
+      return @song
+    else
+      render :show
+    end
   end
 
   def update
+    @song = Song.find(params[:id])
+    @song.update(songs_params)
+    redirect_to song_path(@song)
   end
 
   private
