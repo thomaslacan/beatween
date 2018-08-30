@@ -3,12 +3,11 @@
     <div class="form-content">
 
       <h1>Add ur Track</h1>
-      <!-- <p>Find me in app/views/flats/new.html.erb</p> -->
       <%= simple_form_for [@song, @track] do |f| %>
         <%= f.input :description %>
         <%= f.input :bpm %>
-        <%= f.input :track %>
-        <%= f.input :track_cache, as: :hidden %>
+        <%= f.input :uploaded_file %>
+        <%= f.input :uploaded_file_cache, as: :hidden %>
         <%= f.submit "Add", class: "btn btn-success" %>
       <% end %>
     </div>

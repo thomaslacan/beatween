@@ -16,7 +16,8 @@
         </div>
         <ul class="tracks list-unstyled" id="track-container">
           <% @song.tracks.each do |track| %>
-            <li data-url=<%= track["track_url"] %> data-name=<%= track.description %>>
+          <% @data_url = "https://res.cloudinary.com/dae1kvpyn/" + track["uploaded_file"] %>
+            <li data-url=<%= @data_url %> data-name=<%= track.description %>>
               <div class="song-show-track-type">
                 <%= track.description.capitalize %>
               </div>
