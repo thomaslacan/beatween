@@ -5,19 +5,19 @@
     <p class="track-metadata">Made with <i class="fas fa-heart"></i> at <%= @song.bpm %> bpm | <i class="fas fa-clock"></i> <%= @minutes %>:<%= @seconds %> | <i class="fas fa-music"></i> <%= @song.genre.name %></p>
   </div>
 
-  <% @song.tracks.each do |track| %>
-    <div class="single-track">
-      <span class="track-description">
-        <%= track.description %>
-      </span>
-      <audio
-        class="track-sound"
-        controls
-        src="<%= cloudinary_url("#{track['track_url']}.mp3", resource_type: 'video') %>">
-      </audio>
-      <span class="track-user">
-        <%= cl_image_tag track.user.photo %>
-      </span>
+  <div class="container player-container">
+    <button class="btn btn-primary" id="play" disabled>Play</button>
+    <button class="btn btn-info" id="clear">Solo Clear</button>
+    <div class="tracks-container">
+      <div class="playhead-container">
+        <div id="playhead"></div>
+      </div>
+      <ul class="tracks list-unstyled" id="track-container">
+        <% @song.tracks.each do |track| %>
+        <% @url = "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535379354/" + track["track_url"] + ".mp3" %>
+          <li data-url=<%= @url %> data-name=<%= track.description %>><button class="mute">mute</button><button class="solo">solo</button><canvas class="waveform" width="700px" height="75"></canvas></li>
+        <% end %>
+      </ul>
     </div>
-  <% end %>
+  </div>
 </div>
