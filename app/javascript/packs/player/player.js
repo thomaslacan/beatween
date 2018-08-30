@@ -55,6 +55,11 @@ export default class Player {
     const play = document.getElementById('play')
     play.addEventListener('click', (event) => {
       this.play();
+      if (this.status === 'paused') {
+        play.innerHTML = '<i class="fas fa-play-circle"></i>';
+      } else if (this.status === 'running') {
+        play.innerHTML = '<i class="fas fa-pause-circle"></i>';
+      }
     });
 
     const clearBtn = document.getElementById('clear')

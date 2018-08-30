@@ -55,10 +55,10 @@ export default class Track {
   mute(element){
     if (this.nodeGain.gain.value === 1) {
       this.nodeGain.gain.value = 0
-      element.innerHTML = 'unmute'
+      element.innerHTML = '<i class="fas fa-volume-off"></i>'
     } else {
       this.nodeGain.gain.value = 1
-      element.innerHTML = 'mute'
+      element.innerHTML = '<i class="fas fa-volume-up"></i>'
     };
   }
 
@@ -69,17 +69,17 @@ export default class Track {
   displayBuffer(buff) {
     const canvas = this.canvas
     const context = canvas.getContext('2d')
-    var drawLines = 500;
+    var drawLines = 10000;
     var leftChannel = buff.getChannelData(0); // Float32Array describing left channel
     var lineOpacity = 400 / leftChannel.length  ;
     context.save();
     context.fillStyle = 'rgba(0,0,0,0)' ;
     context.fillRect(0,0,400,75 );
-    context.strokeStyle = '#46a0ba';
+    context.strokeStyle = '#bbb';
     context.globalCompositeOperation = 'lighter';
     context.translate(0,75 / 2);
     //context.globalAlpha = 0.6 ; // lineOpacity ;
-    context.lineWidth=4;
+    context.lineWidth=2;
     var totallength = leftChannel.length;
     var eachBlock = Math.floor(totallength / drawLines);
     var lineGap = (700/drawLines);
