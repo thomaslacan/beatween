@@ -10,4 +10,17 @@ class Song < ApplicationRecord
   validates :genre_id, presence: true
 
   mount_uploader :photo, PhotoUploader
+
+  include PgSearch
+  pg_search_scope :global_search,
+    against: [ :name, :description ],
+    associated_against: {
+      user: [ :username, :first_name, :last_name, :description ]
+    },
+    associated_against: {
+      genre: [ :name ]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
 end

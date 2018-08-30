@@ -113,6 +113,7 @@ instrument47 = Instrument.create!(name: "Tambourin", remote_photo_url: "https://
 instrument48 = Instrument.create!(name: "Trombone", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
 instrument49 = Instrument.create!(name: "Piano", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558457/keyboard-white.svg")
 instrument50 = Instrument.create!(name: "Voice", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558652/voice-white.svg")
+
 #SONGS
 p "----------"
 p "Creating songs..."
@@ -155,6 +156,7 @@ track20 = Track.create!(user: user4, bpm: 100, description: "baton-de-riz", trac
 track21 = Track.create!(user: user4, bpm: 100, description: "wurlizer", track_url: "Audio_21_01" )
 track22 = Track.create!(user: user4, bpm: 100, description: "contrebass", track_url: "Audio_22_01" )
 track23 = Track.create!(user: user4, bpm: 100, description: "snap", track_url: "Audio_23_01" )
+
 p "----------"
 p "Creating songtracks..."
 # SONGTRACKS
