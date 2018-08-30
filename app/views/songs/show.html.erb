@@ -1,8 +1,10 @@
 <div class="container">
-  <h1><%= @song.name %></h1>
-  <div>
-    <p>A project by <%= @song.user["first_name"] %> <%= @song.user["last_name"] %></p>
-    <p class="track-metadata">Made with <i class="fas fa-heart"></i> at <%= @song.bpm %> bpm | <i class="fas fa-clock"></i> <%= @minutes %>:<%= @seconds %> | <i class="fas fa-music"></i> <%= @song.genre.name %></p>
+  <div class="song-details-container" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @song.photo%>');">
+    <h1><%= @song.name %></h1>
+    <div>
+      <p>A project by <%= @song.user["first_name"] %> <%= @song.user["last_name"] %></p>
+      <p class="track-metadata">Made with <i class="fas fa-heart"></i> at <%= @song.bpm %> bpm | <i class="fas fa-clock"></i> <%= @minutes %>:<%= @seconds %> | <i class="fas fa-music"></i> <%= @song.genre.name %></p>
+    </div>
   </div>
 
   <div class="container player-container">
@@ -25,9 +27,6 @@
                 <canvas class="waveform" width="700px" height="75"></canvas>
                 <button class="mute"><i class="fas fa-volume-up"></i></button>
                 <button class="solo">S</button>
-                <% if track.user == current_user %>
-                  <%= link_to 'Delete', track_path, method: :delete %>
-                <% end %>
                 <%= cl_image_tag track.user.photo, width: 50, height: 50, crop: :fill %>
               </div>
             </li>
