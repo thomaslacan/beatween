@@ -28,18 +28,107 @@ user4 = User.create!(username: "Camel-light", first_name: "Damiano", last_name: 
 
 
 #GENRES
+p "----------"
 p "Creating genres..."
 
-genre1 = Genre.create!(name: "House")
-genre2 = Genre.create!(name: "Rock")
-genre3 = Genre.create!(name: "Rap")
-genre4 = Genre.create!(name: "Pop")
-genre5 = Genre.create!(name: "Folk")
-genre6 = Genre.create!(name: "Reggea")
-genre7 = Genre.create!(name: "Classic")
-genre8 = Genre.create!(name: "Techno")
+genre1 = Genre.create!(name: "Abstract")
+genre2 = Genre.create!(name: "Acid Jazz")
+genre3 = Genre.create!(name: "Ambient")
+genre4 = Genre.create!(name: "Ballad")
+genre5 = Genre.create!(name: "Breakbeat")
+genre6 = Genre.create!(name: "Classic")
+genre7 = Genre.create!(name: "Country")
+genre8 = Genre.create!(name: "Dancehall")
+genre9 = Genre.create!(name: "Disco")
+genre10 = Genre.create!(name: "Deep House")
+genre11 = Genre.create!(name: "Downtempo")
+genre12 = Genre.create!(name: "Drum n bass")
+genre13 = Genre.create!(name: "Dub")
+genre14 = Genre.create!(name: "Electro")
+genre15 = Genre.create!(name: "Experimentail")
+genre16 = Genre.create!(name: "Folk")
+genre17 = Genre.create!(name: "Funk")
+genre18 = Genre.create!(name: "Garage House")
+genre19 = Genre.create!(name: "Hardcore")
+genre20 = Genre.create!(name: "Hardrock")
+genre21 = Genre.create!(name: "Hip Hop")
+genre22 = Genre.create!(name: "House")
+genre23 = Genre.create!(name: "IDM")
+genre24 = Genre.create!(name: "Indie")
+genre25 = Genre.create!(name: "Italo Disco")
+genre26 = Genre.create!(name: "Jazz")
+genre27 = Genre.create!(name: "Minimal")
+genre28 = Genre.create!(name: "Opera")
+genre29 = Genre.create!(name: "Progressive House")
+genre30 = Genre.create!(name: "Psy Trance")
+genre31 = Genre.create!(name: "Punk")
+genre32 = Genre.create!(name: "Reggaeton")
+genre33 = Genre.create!(name: "Rock & Roll")
+genre34 = Genre.create!(name: "Rnb")
+genre35 = Genre.create!(name: "Soul")
+genre36 = Genre.create!(name: "Techno")
+genre37 = Genre.create!(name: "Tech-House")
+genre38 = Genre.create!(name: "Trance")
+genre39 = Genre.create!(name: "Trap")
+genre40 = Genre.create!(name: "Vocal")
+
+
+#INSTRUMENTS
+p "----------"
+p "Creating instruments..."
+
+instrument1 = Instrument.create!(name: "Acoustic Guitar", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558583/cordes-white.svg")
+instrument2 = Instrument.create!(name: "Electric Guitar", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558583/cordes-white.svg")
+instrument3 = Instrument.create!(name: "Classic Guitar", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558583/cordes-white.svg")
+instrument4 = Instrument.create!(name: "Electro-Acoustic Guitar", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558583/cordes-white.svg")
+instrument5 = Instrument.create!(name: "Ukulele", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558583/cordes-white.svg")
+instrument6 = Instrument.create!(name: "Electric Bass", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558583/cordes-white.svg")
+instrument7 = Instrument.create!(name: "Accoustic Bass", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558583/cordes-white.svg")
+instrument8 = Instrument.create!(name: "Synthetizer", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558457/keyboard-white.svg")
+instrument9 = Instrument.create!(name: "Organ", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558457/keyboard-white.svg")
+instrument10 = Instrument.create!(name: "Accordion", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535559045/vents.svg")
+instrument11 = Instrument.create!(name: "Hi Tom", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument12 = Instrument.create!(name: "Mid Tom", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument13 = Instrument.create!(name: "Low Tom", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument14 = Instrument.create!(name: "Cymbal", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument15 = Instrument.create!(name: "Rim", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument16 = Instrument.create!(name: "Ride", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument17 = Instrument.create!(name: "Crash", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument18 = Instrument.create!(name: "Open Hat", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument19 = Instrument.create!(name: "Closed Hat", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument20 = Instrument.create!(name: "Closed Hat", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument21 = Instrument.create!(name: "Snare", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument22 = Instrument.create!(name: "Bass Drum", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument23 = Instrument.create!(name: "Kick", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument24 = Instrument.create!(name: "Violin", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558583/cordes-white.svg")
+instrument25 = Instrument.create!(name: "Contrebass", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558583/cordes-white.svg")
+instrument26 = Instrument.create!(name: "Cello", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558583/cordes-white.svg")
+instrument27 = Instrument.create!(name: "Harmonica", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535559045/vents.svg")
+instrument28 = Instrument.create!(name: "Other", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535559290/other.svg")
+instrument29 = Instrument.create!(name: "Shaker", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument30 = Instrument.create!(name: "Glitch", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535559476/fx.svg" )
+instrument31 = Instrument.create!(name: "Fx", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535559476/fx.svg" )
+instrument32 = Instrument.create!(name: "Maracas", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument33 = Instrument.create!(name: "Flute", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535559045/vents.svg")
+instrument34 = Instrument.create!(name: "Pan Flute", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535559045/vents.svg")
+instrument36 = Instrument.create!(name: "Bongo", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument37 = Instrument.create!(name: "Saxophone", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558538/cuivres-white.svg")
+instrument38 = Instrument.create!(name: "Trumpet", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558538/cuivres-white.svg")
+instrument39 = Instrument.create!(name: "Clarinet", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558538/cuivres-white.svg")
+instrument40 = Instrument.create!(name: "Bell", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument41 = Instrument.create!(name: "Conga", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument42 = Instrument.create!(name: "Cor", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558538/cuivres-white.svg")
+instrument43 = Instrument.create!(name: "Cymbal", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument44 = Instrument.create!(name: "Djembe", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument45 = Instrument.create!(name: "Harp", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558583/cordes-white.svg")
+instrument46 = Instrument.create!(name: "Tambour", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument47 = Instrument.create!(name: "Tambourin", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument48 = Instrument.create!(name: "Trombone", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558347/percs-white.svg")
+instrument49 = Instrument.create!(name: "Piano", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558457/keyboard-white.svg")
+instrument50 = Instrument.create!(name: "Voice", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535558652/voice-white.svg")
 
 #SONGS
+p "----------"
 p "Creating songs..."
 
 song1 = Song.create!(name: "Gin n Juice", description: "du gin & du jus ", bpm: 95, num_of_tracks: 23, duration: 198600, user: user4, genre: genre4, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song1.jpg")
@@ -52,6 +141,7 @@ song7 = Song.create!(name: "Killer Elite", description: "Dragonforce from the dr
 song8 = Song.create!(name: "Gerschwin", description: "Rhapsody in blue", bpm: 150, num_of_tracks: 13, duration: 233000, user: user3, genre: genre5, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song8.jpg")
 
 #TRACKS
+p "----------"
 p "Creating tracks..."
 
 track1 = Track.create!(user: user4, bpm: 100, description: "kick", track_url: "Audio_1_01" )
@@ -78,6 +168,7 @@ track21 = Track.create!(user: user4, bpm: 100, description: "wurlizer", track_ur
 track22 = Track.create!(user: user4, bpm: 100, description: "contrebass", track_url: "Audio_22_01" )
 track23 = Track.create!(user: user4, bpm: 100, description: "snap", track_url: "Audio_23_01" )
 
+p "----------"
 p "Creating songtracks..."
 # SONGTRACKS
 
@@ -107,5 +198,5 @@ song_track23 = SongTrack.create!(song: song1, track: track23)
 
 
 p "----------"
-p "Everything seems fine!"
+p "Everything seems fine bro!"
 
