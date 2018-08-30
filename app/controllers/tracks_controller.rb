@@ -14,7 +14,7 @@ class TracksController < ApplicationController
     @song_track.song_id = params[:song_id]
     @song_track.save
     if @song_track.save
-      redirect_to songs_path
+      redirect_to song_path(params[:song_id])
     else
       render :new
     end
