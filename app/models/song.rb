@@ -1,6 +1,7 @@
 class Song < ApplicationRecord
   belongs_to :user
   belongs_to :genre
+  has_many :reviews
   has_many :song_tracks
   has_many :tracks, through: :song_tracks
   validates :name,  presence: true

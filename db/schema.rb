@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_29_143638) do
+ActiveRecord::Schema.define(version: 2018_08_30_093106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,24 @@ ActiveRecord::Schema.define(version: 2018_08_29_143638) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "instruments", force: :cascade do |t|
+    t.string "name"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.float "rating"
+    t.bigint "song_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["song_id"], name: "index_reviews_on_song_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "song_tracks", force: :cascade do |t|
@@ -42,6 +60,8 @@ ActiveRecord::Schema.define(version: 2018_08_29_143638) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.float "rating"
+    t.float "average_rating"
     t.index ["genre_id"], name: "index_songs_on_genre_id"
     t.index ["user_id"], name: "index_songs_on_user_id"
   end
@@ -70,11 +90,12 @@ ActiveRecord::Schema.define(version: 2018_08_29_143638) do
     t.string "last_name"
     t.text "description"
     t.string "photo"
-    t.integer "rating", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "reviews", "songs"
+  add_foreign_key "reviews", "users"
   add_foreign_key "song_tracks", "songs"
   add_foreign_key "song_tracks", "tracks"
   add_foreign_key "songs", "genres"
