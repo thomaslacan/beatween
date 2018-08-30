@@ -6,14 +6,6 @@
 
         </div>
         <div class="song-card-content">
-          <div class="song-card-rating">
-            <% @stars.times do %>
-              <i class="fas fa-star"></i>
-            <% end %>
-            <% @half_stars.times do %>
-              <i class="fas fa-star-half"></i>
-            <% end %>
-          </div>
           <div class="song-card-username">
             <%= song.user.first_name %> <%= song.user.last_name %>
           </div>

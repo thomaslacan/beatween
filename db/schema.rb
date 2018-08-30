@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(version: 2018_08_30_093106) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
-    t.float "rating"
     t.float "average_rating"
     t.index ["genre_id"], name: "index_songs_on_genre_id"
     t.index ["user_id"], name: "index_songs_on_user_id"
@@ -73,7 +72,6 @@ ActiveRecord::Schema.define(version: 2018_08_30_093106) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "track_url"
-    t.string "instrument_type"
     t.index ["user_id"], name: "index_tracks_on_user_id"
   end
 
