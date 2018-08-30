@@ -6,17 +6,30 @@
   </div>
 
   <div class="container player-container">
-    <button class="btn btn-primary" id="play" disabled>Play</button>
-    <button class="btn btn-info" id="clear">Solo Clear</button>
+    <div id="buttons-player">
+      <button id="play" disabled><i class="fas fa-play-circle"></i></button>
+      <button id="clear">Clear solos</button>
+    </div>
     <div class="tracks-container">
       <div class="playhead-container">
-        <div id="playhead"></div>
+        <div id="playhead">
+        </div>
+        <ul class="tracks list-unstyled" id="track-container">
+          <% @song.tracks.each do |track| %>
+            <li data-url=<%= track["track_url"] %> data-name=<%= track.description %>>
+              <div class="song-show-track-type">
+                <%= track.description.capitalize %>
+              </div>
+              <div class="wave-and-butt">
+                <canvas class="waveform" width="700px" height="75"></canvas>
+                <button class="mute"><i class="fas fa-volume-up"></i></button>
+                <button class="solo">S</button>
+                <%= cl_image_tag track.user.photo, width: 50, height: 50, crop: :fill %>
+              </div>
+            </li>
+          <% end %>
+        </ul>
       </div>
-      <ul class="tracks list-unstyled" id="track-container">
-        <% @song.tracks.each do |track| %>
-          <li data-url=<%= track["track_url"] %> data-name=<%= track.description %>><button class="mute">mute</button><button class="solo">solo</button><canvas class="waveform" width="700px" height="75"></canvas></li>
-        <% end %>
-      </ul>
     </div>
   </div>
 </div>
