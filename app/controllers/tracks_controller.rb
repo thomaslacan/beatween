@@ -20,6 +20,19 @@ class TracksController < ApplicationController
     end
   end
 
+  def edit
+    @track = Track.find(params[:id])
+  end
+
+  def update
+    @track = Track.find(params[:id])
+    if @track.update(track_params)
+      @track.save
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @track = Track.find(params[:id])
     @track.destroy

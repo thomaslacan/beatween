@@ -1,2 +1,11 @@
 <h1>Tracks#edit</h1>
 <p>Find me in app/views/tracks/edit.html.erb</p>
+
+<div class="form-content">
+  <%= simple_form_for [@song, @track] do |f| %>
+    <%= f.input :description %>
+    <%= f.input :bpm %>
+    <%= f.submit "Update", class: "btn btn-primary" %>
+    <%= link_to 'back to songs', songs_path, class: 'btn btn-info' %>
+  <% end %>
+</div>
