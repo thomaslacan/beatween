@@ -1,23 +1,18 @@
-.footer-distributed{
-  background-color: #eeeeee;
+.inner-footer {
+  position: fixed;
+  bottom: 0px;
+  background-color: rgb(37, 41, 46);
   width: 100%;
-  padding: 8px 60px;
+  padding: 8px 50px;
   margin-top: 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   bottom: 0;
+  color: white;
+  font-weight: lighter;
 }
 
-.footer-distributed .footer-links{
-  color:  #ffffff;
-  margin: 0 0 10px;
-  padding: 0;
+.social li {
+  padding-top: 10px;
 }
-.footer-distributed .footer-links a{
-  display:inline-block;
-  line-height: 1.8;
-  text-decoration: none;
-  color:  inherit;
-}
-
