@@ -1,2 +1,14 @@
-<h1>Tracks#new</h1>
-<p>Find me in app/views/tracks/new.html.erb</p>
+<div class="container">
+  <div class="form-container">
+    <div class="form-content">
+
+      <h1>Add ur Track</h1>
+      <!-- <p>Find me in app/views/flats/new.html.erb</p> -->
+      <%= simple_form_for [@song, @track] do |f| %>
+        <%= f.input :description %>
+        <%= f.input :bpm %>
+        <%= f.submit "Add", class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
