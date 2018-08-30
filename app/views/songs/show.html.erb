@@ -25,6 +25,9 @@
                 <canvas class="waveform" width="700px" height="75"></canvas>
                 <button class="mute"><i class="fas fa-volume-up"></i></button>
                 <button class="solo">S</button>
+                <% if track.user == current_user %>
+                  <%= link_to 'Delete', track_path, method: :delete %>
+                <% end %>
                 <%= cl_image_tag track.user.photo, width: 50, height: 50, crop: :fill %>
               </div>
             </li>
