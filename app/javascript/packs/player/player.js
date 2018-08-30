@@ -167,6 +167,7 @@ export default class Player {
       this.status = 'stop'
       this.tracks.forEach((track) => {
         track.decode();
+        play.innerHTML = '<i class="fas fa-play-circle"></i>';
       });
     } else {
       elem.style.left = pos + 'px';
