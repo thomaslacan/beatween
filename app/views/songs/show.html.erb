@@ -14,8 +14,7 @@
       </div>
       <ul class="tracks list-unstyled" id="track-container">
         <% @song.tracks.each do |track| %>
-        <% @url = "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535379354/" + track["track_url"] + ".mp3" %>
-          <li data-url=<%= @url %> data-name=<%= track.description %>><button class="mute">mute</button><button class="solo">solo</button><canvas class="waveform" width="700px" height="75"></canvas></li>
+          <li data-url=<%= track["track_url"] %> data-name=<%= track.description %>><button class="mute">mute</button><button class="solo">solo</button><canvas class="waveform" width="700px" height="75"></canvas></li>
         <% end %>
       </ul>
     </div>
