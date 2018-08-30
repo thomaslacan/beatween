@@ -1,8 +1,25 @@
-.card-song-user{
-display: flex;
-background-color: #7f7f7f;
-color: white;
-text-align: center;
-padding-top: 10px;
-padding-bottom: 10px;
+
+
+.show-box {
+  background-color: white;
+  border-radius: 1%;
+  line-height: 2vw;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  line-height: 4vw;
+  text-align: center;
+}
+
+.category {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+
+}
+
+.song-card {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  line-height: 4vw;
+  text-align: center;
 }

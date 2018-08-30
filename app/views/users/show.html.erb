@@ -1,68 +1,71 @@
-
-
 <div class="container">
   <div><h1>.pro</h1></div>
   <div><h1>file</h1></div>
   <div class="row">
-    <div><h3> <%= @user.username %> </h3></div>
     <div class="col-xs-4">
       <div> <%= cl_image_tag @user.photo, height: 260, width: 260, crop: :fill, class: "img-circle" %>  </div>
     </div>
-    <div class="col-xs-8">
+    <div class="col-xs-4">
+      <h3> <%= @user.username %> </h3>
+    </div>
+    <div class="col-xs-4">
       <div><h4>Description</h4></div>
       <div> <%= @user.description %></div>
     </div>
   </div>
+  <div><h3>My Songs</h3></div>
   <div class="row">
     <div class="col-xs-12">
-      <div><h3>My Songs</h3></div>
-      <div class="row">
-        <div class="col-xs-2">
-          <div></div>
-        </div>
-        <div class="col-xs-2">
-          <div><h4>Name</h4></div>
-        </div>
-        <div class="col-xs-2">
-          <div><h4>Description</h4></div>
-        </div>
-        <div class="col-xs-2">
-          <div><h4>BPM </h4></div>
-        </div>
-        <div class="col-xs-2">
-          <div><h4>Duration </h4></div>
-        </div>
-        <div class="col-xs-2">
-          <div><h4>Genre </h4></div>
-        </div>
-      </div>
-      <div class="card-song-user">
-        <% @user.songs.each do |song| %>
-        <div class="row">
-          <div class="col-xs-2">
-            <div><%= cl_image_tag song.photo, height: 160, width: 160, crop: :fill %></div>
+      <div class="show-box">
+        <div class="category">
+          <div class="row">
+            <div class="col-xs-2">
+            </div>
+            <div class="col-xs-2">
+              <h4>Name</h4>
+            </div>
+            <div class="col-xs-2">
+              <h4>BPM</h4>
+            </div>
+            <div class="col-xs-2">
+              <h4>Duration</h4>
+            </div>
+            <div class="col-xs-2">
+              <h4>Genre</h4>
+            </div>
+            <div class="col-xs-2">
+              <h4>Rating</h4>
+            </div>
           </div>
-          <div class="col-xs-2">
-            <div><%= song.name %></div>
-          </div>
-          <div class="col-xs-2">
-            <div> <%= song.description %> </div>
-          </div>
-          <div class="col-xs-2">
-            <div><%= song.bpm %></div>
-          </div>
-          <div class="col-xs-2">
-            <div><%= song.duration %></div>
-          </div>
-          <div class="col-xs-2">
-            <div><%= song.genre %></div>
-          </div>
+        </div>
+        <div class="song-card">
+          <% @user.songs.each do |song| %>
+            <div class="row">
+              <div class="col-xs-2">
+                <div>
+                  <%= cl_image_tag song.photo, height: 130, width: 130, crop: :fill%>
+                </div>
+              </div>
+              <div class="col-xs-2">
+                <div>
+                  <%= song.name %>
+                </div>
+              </div>
+              <div class="col-xs-2">
+                <div><%= song.bpm %></div>
+              </div>
+              <div class="col-xs-2">
+                <div><%= song.duration %></div>
+              </div>
+              <div class="col-xs-2">
+                <div><%= song.genre.name %></div>
+              </div>
+              <div class="col-xs-2">
+              </div>
+            </div>
           <% end %>
         </div>
       </div>
     </div>
   </div>
-</div>
-</div>
-</div>
 </div>
