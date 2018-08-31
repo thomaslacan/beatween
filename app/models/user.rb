@@ -6,9 +6,6 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :songs
   has_many :tracks
-  validates :username, presence: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
 
   mount_uploader :photo, PhotoUploader
 end
