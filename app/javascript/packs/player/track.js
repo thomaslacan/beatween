@@ -42,6 +42,7 @@ export default class Track {
     })
     const soloBtn = this.node.querySelector('.solo')
     soloBtn.addEventListener('click', (event) => {
+      event.currentTarget.classList.toggle('solo-on');
       this.isolate();
     })
     this.displayBuffer(this.source.buffer)
