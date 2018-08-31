@@ -106,7 +106,6 @@ export default class Player {
       console.log(`${toSolo.name} en solo`)
       const mutes = document.querySelectorAll('.mute')
       mutes.forEach((mute) => {
-        console.log(mute)
         mute.setAttribute("disabled", "");
       })
     } else {
@@ -150,8 +149,11 @@ export default class Player {
         this.solo = false;
         const mutes = document.querySelectorAll('.mute')
         mutes.forEach((mute) => {
-          console.log(mute)
           mute.removeAttribute("disabled");
+        })
+        const soloBtn = document.querySelectorAll('.solo');
+        soloBtn.forEach((btn) => {
+        btn.classList.remove('solo-on')
         })
       });
     }
@@ -182,4 +184,5 @@ export default class Player {
     clearInterval(this.playInterval);
   }
 }
+
 
