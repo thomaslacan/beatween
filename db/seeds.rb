@@ -137,13 +137,13 @@ p "----------"
 p "Creating tracks..."
 track1 = Track.create!(user: user2, bpm: 100, description: "drum", instrument_id: instrument1, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626867/beatween/Drum_1.m4a" )
 track2 = Track.create!(user: user2, bpm: 100, description: "drum", instrument_id: instrument2, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626862/beatween/Drum_2.m4a" )
-track3 = Track.create!(user: user2, bpm: 100, description: "drum", instrument_id: instrument3, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626856/beatween/Drum_3.m4a" )
+track3 = Track.create!(user: user3, bpm: 100, description: "drum", instrument_id: instrument3, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626856/beatween/Drum_3.m4a" )
 track4 = Track.create!(user: user2, bpm: 100, description: "synth", instrument_id: instrument4, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626856/beatween/Synth_1.m4a" )
 track5 = Track.create!(user: user2, bpm: 100, description: "outro guitar", instrument_id: instrument5, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626857/beatween/Outro_Guitar.m4a" )
 track6 = Track.create!(user: user2, bpm: 100, description: "synth", instrument_id: instrument6, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626862/beatween/Synth_3.m4a" )
 track7 = Track.create!(user: user2, bpm: 100, description: "synth", instrument_id: instrument7, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626863/beatween/Synth_2.m4a" )
-track8 = Track.create!(user: user2, bpm: 100, description: "synth", instrument_id: instrument8, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626864/beatween/Outro_Synth.m4a" )
-track9 = Track.create!(user: user2, bpm: 100, description: "synth", instrument_id: instrument9, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626865/beatween/Synth_4.m4a" )
+track8 = Track.create!(user: user3, bpm: 100, description: "synth", instrument_id: instrument8, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626864/beatween/Outro_Synth.m4a" )
+track9 = Track.create!(user: user4, bpm: 100, description: "synth", instrument_id: instrument9, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626865/beatween/Synth_4.m4a" )
 track10 = Track.create!(user: user2, bpm: 100, description: "synth", instrument_id: instrument10, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626868/beatween/Synth_5.m4a" )
 
 p "----------"
