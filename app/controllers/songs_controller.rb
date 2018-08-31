@@ -12,6 +12,7 @@ class SongsController < ApplicationController
   end
 
   def show
+    @song_tracks = @song.song_tracks
     @minutes = @song.duration / 60000
     @seconds = @song.duration / 10000 % 60
   end

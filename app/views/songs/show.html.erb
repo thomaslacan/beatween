@@ -24,41 +24,57 @@
         <div id="playhead">
         </div>
         <ul class="tracks list-unstyled" id="track-container">
-          <% @song.tracks.each do |track| %>
-            <% @data_url = "https://res.cloudinary.com/dae1kvpyn/" + track["uploaded_file"] %>
-            <% if track.user == @song.user %>
-              <li data-url=<%= @data_url %> data-name=<%= track.description %> class="owner-user-track">
-                <div class="wave-and-butt">
-                  <div class="track-description <%= track.description.downcase %>"> <%= track.description.capitalize %></div>
-                  <canvas class="waveform" width="700px" height="75"></canvas>
-                  <button class="mute"><i class="fas fa-volume-up"></i></button>
-                  <button class="solo">S</button>
-                </div>
-                <div class="track-user-picture">
-                <%= cl_image_tag track.user.photo, width: 50, height: 50, crop: :fill %>
-              </li>
-            <% elsif track.user == current_user %>
-              <li data-url=<%= @data_url %> data-name=<%= track.description %> class="current-user-track">
-                <div class="wave-and-butt">
-                  <div class="track-description <%= track.description.downcase %>"> <%= track.description.capitalize %></div>
-                  <canvas class="waveform" width="700px" height="75"></canvas>
-                  <button class="mute"><i class="fas fa-volume-up"></i></button>
-                  <button class="solo">S</button>
-                </div>
-                <div class="track-user-picture">
-                <%= cl_image_tag track.user.photo, width: 50, height: 50, crop: :fill %>
-              </li>
+          <% @song_tracks.each do |song_track| %>
+            <% if song_track.status != 'pending' %>
+            <% @data_url = "https://res.cloudinary.com/dae1kvpyn/" + song_track.track["uploaded_file"] %>
+              <% if song_track.track.user == @song.user %>
+                <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="owner-user-track">
+                  <div class="wave-and-butt">
+                    <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
+                    <canvas class="waveform" width="700px" height="75"></canvas>
+                    <button class="mute"><i class="fas fa-volume-up"></i></button>
+                    <button class="solo">S</button>
+                  </div>
+                  <div class="track-user-picture">
+                  <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                </li>
+              <% elsif song_track.track.user == current_user %>
+                <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="current-user-track">
+                  <div class="wave-and-butt">
+                    <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
+                    <canvas class="waveform" width="700px" height="75"></canvas>
+                    <button class="mute"><i class="fas fa-volume-up"></i></button>
+                    <button class="solo">S</button>
+                  </div>
+                  <div class="track-user-picture">
+                  <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                </li>
+              <% else %>
+                <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="other-user-track">
+                  <div class="wave-and-butt">
+                    <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
+                    <canvas class="waveform" width="700px" height="75"></canvas>
+                    <button class="mute"><i class="fas fa-volume-up"></i></button>
+                    <button class="solo">S</button>
+                  </div>
+                  <div class="track-user-picture">
+                  <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                </li>
+              <% end %>
             <% else %>
-              <li data-url=<%= @data_url %> data-name=<%= track.description %> class="other-user-track">
-                <div class="wave-and-butt">
-                  <div class="track-description <%= track.description.downcase %>"> <%= track.description.capitalize %></div>
-                  <canvas class="waveform" width="700px" height="75"></canvas>
-                  <button class="mute"><i class="fas fa-volume-up"></i></button>
-                  <button class="solo">S</button>
-                </div>
-                <div class="track-user-picture">
-                <%= cl_image_tag track.user.photo, width: 50, height: 50, crop: :fill %>
-              </li>
+              <% if current_user == @song.user %>
+              <% @data_url = "https://res.cloudinary.com/dae1kvpyn/" + song_track.track["uploaded_file"] %>
+                <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="owner-user-track pending">
+                  <div class="wave-and-butt">
+                    <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
+                    <canvas class="waveform" width="700px" height="75"></canvas>
+                    <button class="mute"><i class="fas fa-volume-up"></i></button>
+                    <button class="solo">S</button>
+                  </div>
+                  <div class="track-user-picture">
+                  <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                </li>
+              <% end %>
             <% end %>
           <% end %>
         </ul>
