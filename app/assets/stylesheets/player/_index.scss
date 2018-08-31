@@ -42,17 +42,13 @@
 }
 
 .mute, .solo {
-  background-color: #eee;
+  background-color: transparent;
   border-radius: 5px;
   margin: 5px;
-  border: 0px solid #000;
-  color: #393e46;
+  border: 2px solid #fff;
+  color: #fff;
   width: 40px;
   height: 40px;
-}
-
-.fa-volume-off {
-  color: #bbb;
 }
 
 .solo {
@@ -66,27 +62,115 @@
 
 #track-container li {
   line-height: 80%;
+  margin-bottom: 5px;
+  display: flex;
+  justfiy-content: space-between;
+  align-items: center;
+}
+
+.muted-track {
+  background-color: #bbb;
 }
 
 .wave-and-butt {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #474a56;
+  border-radius: 5px;
+  padding: 0 20px;
+  position: relative;
+  box-shadow: 1px 1px 1px #474a56;
 }
 
-.wave-and-butt img {
+#track-container li img {
   border-radius: 50%;
 }
 
 .song-show-track-type {
-  padding-left: 10px;
-  padding-top: 10px;
   font-weight: 100;
   font-family: Raleway;
-  color: #bbb;
   font-size: 18px;
-  border-top: 1px solid rgba(238,238,238, 0.5);
 }
+
+.track-description {
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  font-family: Raleway;
+  font-weight: 100;
+  max-width: 100px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+
+.track-user-picture img {
+  margin-left: 10px;
+  box-shadow: 1px 1px 3px #474a56;
+}
+
+.drum {
+  border: 1px solid #feff89;
+  color: #feff89;
+}
+
+.drum:hover {
+  background-color: #feff89;
+  border: 0px solid #feff89;
+  color: #000;
+}
+
+.synth {
+  border: 1px solid #e62a76;
+  color: #e62a76;
+}
+
+.synth:hover {
+  background-color: #e62a76;
+  border: 0px solid #e62a76;
+  color: #fff;
+}
+
+.voice {
+  border: 1px solid #dd0a35;
+  color: #dd0a35;
+}
+
+.voice:hover {
+  background-color: #dd0a35;
+  border: 0px solid #dd0a35;
+  color: #fff;
+}
+
+.guitar {
+  border: 1px solid #ff9900;
+  color: #ff9900;
+}
+
+.guitar:hover {
+  background-color: #ff9900;
+  border: 0px solid #ff9900;
+  color: #fff;
+}
+
+// . {
+//   background-color: #1d97c1;
+// }
+
+// . {
+//   background-color: #17bebb;
+// }
+
+// . {
+//   background-color: #2b007b;
+// }
+
+// . {
+//   background-color: ;
+// }
 
 .solo-on {
   background-color: rgb(255, 254, 180);

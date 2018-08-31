@@ -52,7 +52,6 @@ export default class Track {
     this.source.start(time, offset);
   }
 
-
   mute(element){
     if (this.nodeGain.gain.value === 1) {
       this.nodeGain.gain.value = 0
@@ -76,7 +75,7 @@ export default class Track {
     context.save();
     context.fillStyle = 'rgba(0,0,0,0)' ;
     context.fillRect(0,0,400,75 );
-    context.strokeStyle = '#bbb';
+    context.strokeStyle = '#fff';
     context.globalCompositeOperation = 'lighter';
     context.translate(0,75 / 2);
     //context.globalAlpha = 0.6 ; // lineOpacity ;
