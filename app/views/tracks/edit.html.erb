@@ -1,5 +1,5 @@
 <div class="form-content">
-  <%= simple_form_for [@song, @track] do |f| %>
+  <%= simple_form_for @track do |f| %>
     <%= f.input :description %>
     <%= f.input :bpm %>
     <%= f.submit "Update", class: "btn btn-primary", method: :put %>

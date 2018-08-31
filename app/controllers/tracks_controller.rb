@@ -19,22 +19,23 @@ class TracksController < ApplicationController
     end
   end
 
-  def edit
-    @track = Track.find(params[:id])
-  end
+  # def edit
+  #   @track = Track.find(params[:id])
+  # end
 
-  def update
-    @track = Track.find(params[:id])
-    @song = Song.find(params[:song_id])
-    @track.save
-    redirect_to song_path(@song)
-  end
+  # def update
+  #   @track = Track.find(params[:id])
+  #   @song = Song.find(params[:song_id])
+  #   @track.save
+  #   redirect_to song_path(@song)
+  # end
 
-  def destroy
-    @track = Track.find(params[:id])
-    @track.destroy
-    redirect_to songs_path
-  end
+  # def destroy
+  #   @user == current_user
+  #   @track = Track.find(params[:id])
+  #   @track.destroy
+  #   redirect_to songs_path
+  # end
 
 
   private

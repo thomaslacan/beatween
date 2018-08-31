@@ -104,6 +104,11 @@ export default class Player {
       console.log("Mode solo activé")
       toSolo.solo = true;
       console.log(`${toSolo.name} en solo`)
+      const mutes = document.querySelectorAll('.mute')
+      mutes.forEach((mute) => {
+        console.log(mute)
+        mute.setAttribute("disabled", "");
+      })
     } else {
       if (toSolo.solo === true) {
         console.log("Mode solo actif")
@@ -123,6 +128,11 @@ export default class Player {
           })
           this.solo = false;
           console.log("Mode solo inactivé");
+          const mutes = document.querySelectorAll('.mute')
+          mutes.forEach((mute) => {
+            console.log(mute)
+            mute.removeAttribute("disabled");
+          })
         }
       } else {
         toSolo.nodeGain.gain.value = 1;
@@ -138,6 +148,11 @@ export default class Player {
         track.nodeGain.gain.value = 1;
         track.solo = false;
         this.solo = false;
+        const mutes = document.querySelectorAll('.mute')
+        mutes.forEach((mute) => {
+          console.log(mute)
+          mute.removeAttribute("disabled");
+        })
       });
     }
   }
@@ -152,6 +167,7 @@ export default class Player {
       this.status = 'stop'
       this.tracks.forEach((track) => {
         track.decode();
+        play.innerHTML = '<i class="fas fa-play-circle"></i>';
       });
     } else {
       elem.style.left = pos + 'px';
