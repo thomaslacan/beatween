@@ -4,9 +4,33 @@
   margin: 3px 0px;
 }
 
+#player-navbar {
+  width: 750px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 #buttons-player {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+#buttons-player a {
+  text-decoration: none;
+}
+
+#add-button {
+  background-color: #1daa25;
+  color: #fff;
+  padding: 30px 40px;
+  border-radius: 5px;
+}
+
+#add-button:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 3px #474a56;
 }
 
 #play {
@@ -23,7 +47,7 @@
 }
 
 .player-container {
-  margin: 20px auto;
+  margin: 20px auto 0px auto;
   width: 70vw;
 }
 
@@ -32,7 +56,8 @@
   width: 4px;
   position: absolute;
   background-color: #0009C2;
-  opacity: 0.6;
+  opacity: 1;
+  z-index: 1;
 }
 
 .playhead-container {
@@ -76,11 +101,31 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #474a56;
   border-radius: 5px;
   padding: 0 20px;
   position: relative;
   box-shadow: 1px 1px 1px #474a56;
+}
+
+.owner-user-track .wave-and-butt {
+  background-color: #474a56;
+}
+
+.current-user-track .wave-and-butt {
+  background-color: #1DAA25;
+}
+
+.current-user-track .wave-and-butt .track-description {
+  background-color: #fff;
+  border: 0px solid #fff;
+}
+
+.current-user-track .wave-and-butt .track-description:hover {
+  background-color: #dd0a35;
+}
+
+.other-user-track .wave-and-butt {
+  background-color: #1D8FAA;
 }
 
 #track-container li img {
@@ -104,7 +149,7 @@
   max-width: 100px;
   position: absolute;
   top: 4px;
-  left: 4px;
+  left: 10px;
 }
 
 .track-user-picture img {
@@ -173,5 +218,7 @@
 // }
 
 .solo-on {
-  background-color: rgb(255, 254, 180);
+  background-color: #feff89;
+  color: #000;
+  border: 0px solid #000;
 }
