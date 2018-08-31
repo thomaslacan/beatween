@@ -24,7 +24,11 @@
   color: white;
   font-weight: lighter;
   width: 100vw;
-  padding: 40px 0px 60px 0px;
+  padding: 40px 0px 60px 0px!important;
   background-size: cover;
   background-position: center;
+}
+
+.song-details-content {
+  padding-left: 15px;
 }
