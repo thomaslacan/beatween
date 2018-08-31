@@ -24,11 +24,16 @@
   display: none;
 }
 
+.distorted {
+  right: 20%!important;
+}
+
 #search-button {
   font-size: 32px;
   position: absolute;
   top: 110px;
   right: 30px;
+  color: #bbb;
 }
 
 #search-button:hover {
@@ -38,14 +43,13 @@
 #search-bar {
   opacity: 0.4;
   color: #fff;
-  background-color: #000;
+  background-color: #bbb;
   padding: 15px;
-  border-radius: 10px;
   position: fixed;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  height: 300px;
+  bottom: 0%;
+  right: 0;
+  width: 18%;
+  height: 100vh;
 }
 
 .song-card-content-wrapper {
