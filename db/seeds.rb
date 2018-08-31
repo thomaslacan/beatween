@@ -145,6 +145,7 @@ track7 = Track.create!(user: user2, bpm: 100, description: "synth", instrument_i
 track8 = Track.create!(user: user3, bpm: 100, description: "synth", instrument_id: instrument8, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626864/beatween/Outro_Synth.m4a" )
 track9 = Track.create!(user: user4, bpm: 100, description: "synth", instrument_id: instrument9, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626865/beatween/Synth_4.m4a" )
 track10 = Track.create!(user: user2, bpm: 100, description: "synth", instrument_id: instrument10, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626868/beatween/Synth_5.m4a" )
+track11 = Track.create!(user: user4, bpm: 100, description: "voice", instrument_id: instrument10, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535715778/daft_punk_sample.m4a" )
 
 p "----------"
 p "Creating songtracks..."
