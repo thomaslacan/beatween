@@ -52,6 +52,10 @@ export default class Track {
     this.source.start(time, offset);
   }
 
+  stop(time){
+    this.source.stop(time)
+  }
+
   mute(element){
     if (this.nodeGain.gain.value === 1) {
       this.nodeGain.gain.value = 0
