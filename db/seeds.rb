@@ -13,8 +13,8 @@ p "----------"
 p "Creating users..."
 # USERS
 user1 = User.create!(username: "tomakman", first_name: "Thomas", last_name: "Lacan", email: "thomas@beatween.com", password: "mdpmdp", description: "Late 90's House music producer", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535121305/sj44wrihgidsud3i0ynl.jpg")
-user2 = User.create!(username: "antoinecoconut", first_name: "Antoine", last_name: "Duvauchelle", email: "antoine@beatween.com", password: "mdpmdp", description: "Tech journalist, saxo player and masterpiece fullstack developer", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535118655/ajzwuuchjypc2rp91fkt.jpg")
-user3 = User.create!(username: "ghbozz", first_name: "Romain", last_name: "Sanson", email: "romain@beatween.com", password: "mdpmdp", description: "Sound engineer and masterpiece fullstack developer", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535118652/ynmcx0pzk822pfir1fco.jpg")
+user2 = User.create!(username: "antoinecoconut", first_name: "Antoine", last_name: "Duvauchelle", email: "antoine@beatween.com", password: "mdpmdp", description: "Tech journalist, saxo player and masterpiece fullstack developer", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535712180/kanye.jpg")
+user3 = User.create!(username: "ghbozz", first_name: "Romain", last_name: "Sanson", email: "romain@beatween.com", password: "mdpmdp", description: "Sound engineer and masterpiece fullstack developer", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535712180/demon.jpg")
 user4 = User.create!(username: "Camel-light", first_name: "Damiano", last_name: "Rousselet", email: "damiano@beatween.com", password: "mdpmdp", description: "Hacker of all but women first ", remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535118649/wxn7yc6fvlrvda9wof5g.jpg")
 #GENRES
 p "----------"
@@ -24,14 +24,14 @@ genre2 = Genre.create!(name: "Acid Jazz")
 genre3 = Genre.create!(name: "Ambient")
 genre4 = Genre.create!(name: "Ballad")
 genre5 = Genre.create!(name: "Breakbeat")
-# genre6 = Genre.create!(name: "Classic")
-# genre7 = Genre.create!(name: "Country")
-# genre8 = Genre.create!(name: "Dancehall")
-# genre9 = Genre.create!(name: "Disco")
-# genre10 = Genre.create!(name: "Deep House")
-# genre11 = Genre.create!(name: "Downtempo")
-# genre12 = Genre.create!(name: "Drum n bass")
-# genre13 = Genre.create!(name: "Dub")
+genre6 = Genre.create!(name: "Classic")
+genre7 = Genre.create!(name: "Country")
+genre8 = Genre.create!(name: "Dancehall")
+genre9 = Genre.create!(name: "Disco")
+genre10 = Genre.create!(name: "Deep House")
+genre11 = Genre.create!(name: "Downtempo")
+genre12 = Genre.create!(name: "Drum n bass")
+genre13 = Genre.create!(name: "Dub")
 # genre14 = Genre.create!(name: "Electro")
 # genre15 = Genre.create!(name: "Experimentail")
 # genre16 = Genre.create!(name: "Folk")
@@ -50,15 +50,17 @@ genre5 = Genre.create!(name: "Breakbeat")
 # genre29 = Genre.create!(name: "Progressive House")
 # genre30 = Genre.create!(name: "Psy Trance")
 # genre31 = Genre.create!(name: "Punk")
-# genre32 = Genre.create!(name: "Reggaeton")
-# genre33 = Genre.create!(name: "Rock & Roll")
-# genre34 = Genre.create!(name: "Rnb")
+genre32 = Genre.create!(name: "Reggaeton")
+genre33 = Genre.create!(name: "Rock & Roll")
+genre34 = Genre.create!(name: "Rnb")
 # genre35 = Genre.create!(name: "Soul")
 # genre36 = Genre.create!(name: "Techno")
 # genre37 = Genre.create!(name: "Tech-House")
 # genre38 = Genre.create!(name: "Trance")
 # genre39 = Genre.create!(name: "Trap")
 # genre40 = Genre.create!(name: "Vocal")
+genre41 = Genre.create!(name: "Rap")
+
 
 
 #INSTRUMENTS
@@ -117,13 +119,13 @@ instrument10 = Instrument.create!(name: "Accordion", remote_photo_url: "https://
 #SONGS
 p "----------"
 p "Creating songs..."
-song1 = Song.create!(name: "Gin n Juice", description: "du gin & du jus ", bpm: 95, num_of_tracks: 23, duration: 198600, user: user4, genre: genre1, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song1.jpg", average_rating: 1.5)
+song1 = Song.create!(name: "Stronger", description: "Better Faster ", bpm: 95, num_of_tracks: 23, duration: 198600, user: user2, genre: genre41, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535712439/kanye_stronger_by_soyen.jpg", average_rating: 1.5)
 song2 = Song.create!(name: "Love On The Beat", description: "For house music lovers", bpm: 142, num_of_tracks: 24, duration: 620000, user: user1, genre: genre1, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song2.jpg", average_rating: 4.5)
 song3 = Song.create!(name: "Antisocial", description: "Rock rules motherfucker !!", bpm: 126, num_of_tracks: 20, duration: 410000, user: user2, genre: genre1, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song3.jpg", average_rating: 2.5)
-song4 = Song.create!(name: "Bitches", description: "Bitches are my breakfast", bpm: 95, num_of_tracks: 18, duration: 210000, user: user4, genre: genre1, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song4.jpg", average_rating: 3)
+song4 = Song.create!(name: "Bitches", description: "Bitches are my breakfast", bpm: 95, num_of_tracks: 18, duration: 210000, user: user3, genre: genre41, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song4.jpg", average_rating: 3)
 song5 = Song.create!(name: "Rumors", description: "Fleatwood Mac", bpm: 112, num_of_tracks: 10, duration: 180333, user: user3, genre: genre1, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song5.jpg", average_rating: 4)
 song6 = Song.create!(name: "Rachmaninoff", description: "Symphony numero 2", bpm: 94, num_of_tracks: 14, duration: 215000, user: user2, genre: genre1, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song6.jpg", average_rating: 1)
-song7 = Song.create!(name: "Killer Elite", description: "Dragonforce from the dragons", bpm: 103, num_of_tracks: 17, duration: 195000, user: user1, genre: genre1, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song7.jpg", average_rating: 2.5)
+song7 = Song.create!(name: "Killer Elite", description: "Dragonforce from the dragons", bpm: 103, num_of_tracks: 17, duration: 195000, user: user4, genre: genre41, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song7.jpg", average_rating: 2.5)
 song8 = Song.create!(name: "Gerschwin", description: "Rhapsody in blue", bpm: 150, num_of_tracks: 13, duration: 233000, user: user3, genre: genre1, remote_photo_url: "https://res.cloudinary.com/dae1kvpyn/image/upload/v1535379670/song8.jpg", average_rating: 5)
 #REVIEWS
 p "----------"
@@ -133,16 +135,16 @@ review2 = Review.create!(content: "Amazing", rating: 4, song: song2, user: user2
 #TRACKS
 p "----------"
 p "Creating tracks..."
-track1 = Track.create!(user: user4, bpm: 100, description: "drum", instrument_id: instrument1, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626867/beatween/Drum_1.m4a" )
-track2 = Track.create!(user: user4, bpm: 100, description: "drum", instrument_id: instrument2, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626862/beatween/Drum_2.m4a" )
-track3 = Track.create!(user: user4, bpm: 100, description: "drum", instrument_id: instrument3, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626856/beatween/Drum_3.m4a" )
-track4 = Track.create!(user: user4, bpm: 100, description: "synth", instrument_id: instrument4, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626856/beatween/Synth_1.m4a" )
-track5 = Track.create!(user: user4, bpm: 100, description: "outro guitar", instrument_id: instrument5, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626857/beatween/Outro_Guitar.m4a" )
-track6 = Track.create!(user: user4, bpm: 100, description: "synth", instrument_id: instrument6, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626862/beatween/Synth_3.m4a" )
-track7 = Track.create!(user: user4, bpm: 100, description: "synth", instrument_id: instrument7, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626863/beatween/Synth_2.m4a" )
-track8 = Track.create!(user: user4, bpm: 100, description: "synth", instrument_id: instrument8, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626864/beatween/Outro_Synth.m4a" )
-track9 = Track.create!(user: user4, bpm: 100, description: "synth", instrument_id: instrument9, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626865/beatween/Synth_4.m4a" )
-track10 = Track.create!(user: user4, bpm: 100, description: "synth", instrument_id: instrument10, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626868/beatween/Synth_5.m4a" )
+track1 = Track.create!(user: user2, bpm: 100, description: "drum", instrument_id: instrument1, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626867/beatween/Drum_1.m4a" )
+track2 = Track.create!(user: user2, bpm: 100, description: "drum", instrument_id: instrument2, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626862/beatween/Drum_2.m4a" )
+track3 = Track.create!(user: user2, bpm: 100, description: "drum", instrument_id: instrument3, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626856/beatween/Drum_3.m4a" )
+track4 = Track.create!(user: user2, bpm: 100, description: "synth", instrument_id: instrument4, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626856/beatween/Synth_1.m4a" )
+track5 = Track.create!(user: user2, bpm: 100, description: "outro guitar", instrument_id: instrument5, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626857/beatween/Outro_Guitar.m4a" )
+track6 = Track.create!(user: user2, bpm: 100, description: "synth", instrument_id: instrument6, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626862/beatween/Synth_3.m4a" )
+track7 = Track.create!(user: user2, bpm: 100, description: "synth", instrument_id: instrument7, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626863/beatween/Synth_2.m4a" )
+track8 = Track.create!(user: user2, bpm: 100, description: "synth", instrument_id: instrument8, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626864/beatween/Outro_Synth.m4a" )
+track9 = Track.create!(user: user2, bpm: 100, description: "synth", instrument_id: instrument9, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626865/beatween/Synth_4.m4a" )
+track10 = Track.create!(user: user2, bpm: 100, description: "synth", instrument_id: instrument10, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1535626868/beatween/Synth_5.m4a" )
 
 p "----------"
 p "Creating songtracks..."
