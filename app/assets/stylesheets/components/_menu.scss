@@ -1,8 +1,29 @@
-#menu-menu {
-  position: fixed;
-  top: 20px;
-  right: 20px;
+#navbar-navbar {
+  top: 0px;
   z-index: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  padding: 5px;
+}
+
+#logo-logo {
+  width: 220px;
+  padding: 10px;
+  justify-self: center;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+#logo-logo img {
+  width: 200px;
+}
+
+#menu-menu {
+  z-index: 1;
+  background-color: #fff;
 }
 
 #main-menu i {
