@@ -101,18 +101,35 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 0;
+  position: relative;
+  box-shadow: 0px 1px 1px #474a56;
+}
+
+.solo-mute-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   padding: 0 20px;
   position: relative;
   box-shadow: 1px 1px 1px #474a56;
+  height: 75px;
 }
 
-.owner-user-track .wave-and-butt {
+.owner-user-track .wave-and-butt, .owner-user-track .solo-mute-btns {
   background-color: #474a56;
 }
 
-.current-user-track .wave-and-butt {
+.current-user-track .wave-and-butt, .current-user-track .solo-mute-btns {
   background-color: #1DAA25;
+}
+
+.other-user-track .wave-and-butt, .other-user-track .solo-mute-btns {
+  background-color: #1D8FAA;
 }
 
 .current-user-track .wave-and-butt .track-description {
@@ -122,10 +139,6 @@
 
 .current-user-track .wave-and-butt .track-description:hover {
   background-color: #dd0a35;
-}
-
-.other-user-track .wave-and-butt {
-  background-color: #1D8FAA;
 }
 
 #track-container li img {
