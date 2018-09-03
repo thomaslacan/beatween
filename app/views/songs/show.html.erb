@@ -17,11 +17,11 @@
       </div>
     </div>
     <div class="tracks-container">
-      <%= link_to new_song_track_path(@song.id) do %>
-        <div id="fake-track">
-          Add your track
-        </div>
-      <% end %>
+      <div id="fake-track">
+        <%= link_to new_song_track_path(@song.id) do %>
+          Add your own track
+        <% end %>
+      </div>
       <div class="playhead-container">
         <div id="playhead"></div>
       </div>
@@ -35,11 +35,15 @@
                   <div class="wave-and-butt">
                     <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
                     <canvas class="waveform" width="700px" height="75"></canvas>
+                  </div>
+                  <div class="solo-mute-btns">
                     <button class="mute"><i class="fas fa-volume-up"></i></button>
                     <button class="solo">S</button>
                   </div>
-                  <div class="track-user-picture">
-                    <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                  <div class="exit-controls">
+                    <div class="track-user-picture">
+                      <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                    </div>
                   </div>
                 </li>
               <% elsif song_track.track.user == current_user %>
@@ -48,14 +52,16 @@
                     <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
                     <canvas class="waveform" width="700px" height="75"></canvas>
                   </div>
-                    <div class="solo-mute-btns">
-                      <button class="mute"><i class="fas fa-volume-up"></i></button>
-                      <button class="solo">S</button>
-                    </div>
+                  <div class="solo-mute-btns">
+                    <button class="mute"><i class="fas fa-volume-up"></i></button>
+                    <button class="solo">S</button>
+                  </div>
+                  <div class="exit-controls">
                     <div class="track-user-picture">
                       <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
                     </div>
                     <%= link_to "Delete", song_track_path(song_track), method: :delete%>
+                  </div>
                   </li>
                 <% else %>
                   <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="other-user-track">
@@ -76,75 +82,36 @@
             <% end %>
           <% end %>
         </ul>
-        </div>
-
+      </div>
+      <div class="pending-tracks-container">
         <% if current_user == @song.user %>
-          <% @song_tracks.each do |song_track| %>
-            <% if song_track.status == 'pending' %>
-              <div class="pending-tracks">
-              <h3>pending tracks</h3>
-              <% @data_url = "https://res.cloudinary.com/dae1kvpyn/" + song_track.track["uploaded_file"] %>
-                <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="owner-user-track pending">
+          <div class="pending-title">
+            pending tracks
+          </div>
+          <ul class="pending-tracks">
+            <% @song_tracks.each do |song_track| %>
+              <% if song_track.status == 'pending' %>
+                <% @data_url = "https://res.cloudinary.com/dae1kvpyn/" + song_track.track["uploaded_file"] %>
+                <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %>>
                   <div class="wave-and-butt">
                     <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
                     <canvas class="waveform" width="700px" height="75"></canvas>
+                    <%= link_to "Listen", song_track_path(song_track), method: :patch %>
                   </div>
                   <div class="solo-mute-btns">
-                    <button class="mute"><i class="fas fa-volume-up"></i></button>
-                    <button class="solo">S</button>
                   </div>
-                  <div class="track-user-picture">
-                    <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
-                  </div>
-                  <%= link_to "Delete", song_track_path(song_track), method: :delete%>
-                </li>
-              <% else %>
-                <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="other-user-track">
-                  <div class="wave-and-butt">
-                    <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
-                    <canvas class="waveform" width="700px" height="75"></canvas>
-                    <button class="mute"><i class="fas fa-volume-up"></i></button>
-                    <button class="solo">S</button>
-                  </div>
-                  <div class="track-user-picture">
-                    <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                  <div class="exit-controls">
+                    <div class="track-user-picture">
+                      <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                    </div>
                   </div>
                 </li>
               <% end %>
             <% end %>
-          </div>
+          </ul>
         <% end %>
-      </ul>
+      </div>
     </div>
-    <div class="tracks-container">
-      <% if current_user == @song.user %>
-        <% @song_tracks.each do |song_track| %>
-          <% if song_track.status == 'pending' %>
-            <div class="pending-tracks">
-              <h3>pending tracks</h3>
-              <% @data_url = "https://res.cloudinary.com/dae1kvpyn/" + song_track.track["uploaded_file"] %>
-              <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="owner-user-track pending">
-                <div class="wave-and-butt">
-                  <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
-                  <canvas class="waveform" width="700px" height="75"></canvas>
-                  <div class="solo-mute-btns">
-                    <button class="mute"><i class="fas fa-volume-up"></i></button>
-                    <button class="solo">S</button>
-                  </div>
-                </div>
-                <div class="track-user-picture">
-                  <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
-                </div>
-                <%= link_to "Delete", song_track_path(song_track), method: :delete%>
-                <%= link_to "Accept", song_track_path(song_track), method: :patch %>
-              </li>
-            </div>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
-
     <%= link_to 'Download Project', @download_link %>
-    </div>
   </div>
 </div>
