@@ -68,11 +68,14 @@
                   <div class="wave-and-butt">
                     <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
                     <canvas class="waveform" width="700px" height="75"></canvas>
-                    <button class="mute"><i class="fas fa-volume-up"></i></button>
-                    <button class="solo">S</button>
+                    <div class="solo-mute-btns">
+                      <button class="mute"><i class="fas fa-volume-up"></i></button>
+                      <button class="solo">S</button>
+                    </div>
                   </div>
                   <div class="track-user-picture">
-                  <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                    <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                  </div>
                 </li>
               <% end %>
             <% end %>

@@ -112,8 +112,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
   padding: 0 20px;
   position: relative;
   box-shadow: 1px 1px 1px #474a56;
@@ -122,14 +120,20 @@
 
 .owner-user-track .wave-and-butt, .owner-user-track .solo-mute-btns {
   background-color: #474a56;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .current-user-track .wave-and-butt, .current-user-track .solo-mute-btns {
   background-color: #1DAA25;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .other-user-track .wave-and-butt, .other-user-track .solo-mute-btns {
   background-color: #1D8FAA;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .current-user-track .wave-and-butt .track-description {
