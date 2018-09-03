@@ -1,39 +1,46 @@
-<div><h1>.pro</h1></div>
-<div><h1>file</h1></div>
-<div class="user-description">
-  <div class="user-data">
-    <div class="user-username"><%= @user.username %></div>
-    <div class="user-userdescription"><%= @user.description %></div>
+<div class="container">
+  <div><h1>.pro</h1></div>
+  <div><h1>file</h1></div>
+  <div class="user-description">
+    <div class="user-data">
+      <div class="user-username"><%= @user.username %></div>
+      <div class="user-userdescription"><%= @user.description %></div>
+    </div>
+    <div class="user-photo">
+      <%= cl_image_tag @user.photo, height: 260, width: 260, crop: :fill, class: "img-circle" %>
+    </div>
   </div>
-  <div class="user-photo">
-    <%= cl_image_tag @user.photo, height: 260, width: 260, crop: :fill, class: "img-circle" %>
-  </div>
-</div>
-<div class="user-songs">
-  <h3>My Songs</h3>
-  <div class="user-songs-grid">
-    <% @user.songs.each do |song| %>
-      <%= link_to song_path(song) do %>
-      <div class="user-song-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path song.photo%>'); background-size: cover">
-          <div class="user-song-card-content">
-            <div class="user-song-card-name">
-              <%= song.name %>
+  <div class="user-songs">
+    <h3>My Songs</h3>
+    <div class="row user-songs-grid">
+      <% @user.songs.each do |song| %>
+        <%= link_to song_path(song) do %>
+        <div class="col-xd-12 col-sd-4 col-md-4">
+          <div class="user-song-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path song.photo%>'); background-size: cover">
+              <div class="user-song-card-main">
+                <div class="user-song-card-name">
+                  <%= song.name %>
+                </div>
+                <div class="user-song-card-description">
+                  <%= song.description %>
+                </div>
+              </div>
+              <div class="user-song-card-metada">
+                <span class="user-song-card-bpm">
+                  <i class="fas fa-heartbeat"></i> <%= song.bpm %>
+                </span>
+                <span class="user-song-card-duration">
+                  <i class="fas fa-clock"></i> <%= song.duration / 60000 %>:<%= song.duration / 10000 % 60 %>
+                </span>
+                <span class="user-song-card-genre">
+                  <i class="fas fa-music"></i> <%= song.genre.name%>
+                </span>
+              </div>
             </div>
-            <div class="user-song-card-metada">
-              <span class="user-song-card-bpm">
-                <i class="fas fa-heartbeat"></i> <%= song.bpm %>
-              </span>
-              <span class="user-song-card-duration">
-                <i class="fas fa-clock"></i> <%= song.duration / 60000 %>:<%= song.duration / 10000 % 60 %>
-              </span>
-              <span class="user-song-card-genre">
-                <i class="fas fa-music"></i> <%= song.genre.name%>
-              </span>
-            </div>
-          </div>
         </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
 
