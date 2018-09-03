@@ -12,6 +12,10 @@ class SongsController < ApplicationController
   end
 
   def show
+    @uploaded_files = @song.tracks.map {|track| track.uploaded_file.file.public_id}
+    @download_link = Cloudinary::Utils.download_zip_url(
+        :public_ids => @uploaded_files,
+        :resource_type => 'video')
     @minutes = @song.duration / 60000
     @seconds = @song.duration / 10000 % 60
   end
