@@ -5,7 +5,6 @@
       <h1>Add ur Track</h1>
       <%= simple_form_for [@song, @track] do |f| %>
         <%= f.input :description %>
-        <%= f.input :bpm %>
         <%= f.input :uploaded_file %>
         <%= f.input :uploaded_file_cache, as: :hidden %>
         <%= f.submit "Add", class: "btn btn-success" %>
