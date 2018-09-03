@@ -23,33 +23,31 @@
         </div>
       <% end %>
       <div class="playhead-container">
-        <div id="playhead">
-        </div>
-        <ul class="tracks list-unstyled" id="track-container">
-          <% @song_tracks.each do |song_track| %>
-            <div class="active-tracks">
+        <div id="playhead"></div>
+      </div>
+      <ul class="tracks list-unstyled" id="track-container">
+        <% @song_tracks.each do |song_track| %>
+          <div class="active-tracks">
             <% if song_track.status != 'pending' %>
               <% @data_url = "https://res.cloudinary.com/dae1kvpyn/" + song_track.track["uploaded_file"] %>
-                <% if song_track.track.user == @song.user %>
-                  <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="owner-user-track">
-                    <div class="wave-and-butt">
-                      <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
-                      <canvas class="waveform" width="700px" height="75"></canvas>
-                    </div>
-                    <div class="solo-mute-btns">
-                      <button class="mute"><i class="fas fa-volume-up"></i></button>
-                      <button class="solo">S</button>
-                    </div>
-                    <div class="track-user-picture">
-                      <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
-                    </div>
-                  </li>
-                <% elsif song_track.track.user == current_user %>
-                  <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="current-user-track">
-                    <div class="wave-and-butt">
-                      <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
-                      <canvas class="waveform" width="700px" height="75"></canvas>
-                    </div>
+              <% if song_track.track.user == @song.user %>
+                <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="owner-user-track">
+                  <div class="wave-and-butt">
+                    <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
+                    <canvas class="waveform" width="700px" height="75"></canvas>
+                    <button class="mute"><i class="fas fa-volume-up"></i></button>
+                    <button class="solo">S</button>
+                  </div>
+                  <div class="track-user-picture">
+                    <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                  </div>
+                </li>
+              <% elsif song_track.track.user == current_user %>
+                <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="current-user-track">
+                  <div class="wave-and-butt">
+                    <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
+                    <canvas class="waveform" width="700px" height="75"></canvas>
+                  </div>
                     <div class="solo-mute-btns">
                       <button class="mute"><i class="fas fa-volume-up"></i></button>
                       <button class="solo">S</button>
@@ -99,15 +97,54 @@
                     <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
                   </div>
                   <%= link_to "Delete", song_track_path(song_track), method: :delete%>
-                  <%= link_to "Accept", song_track_path(song_track), method: :patch %>
                 </li>
-              </div>
+              <% else %>
+                <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="other-user-track">
+                  <div class="wave-and-butt">
+                    <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
+                    <canvas class="waveform" width="700px" height="75"></canvas>
+                    <button class="mute"><i class="fas fa-volume-up"></i></button>
+                    <button class="solo">S</button>
+                  </div>
+                  <div class="track-user-picture">
+                    <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                  </div>
+                </li>
+              <% end %>
             <% end %>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+    <div class="tracks-container">
+      <% if current_user == @song.user %>
+        <% @song_tracks.each do |song_track| %>
+          <% if song_track.status == 'pending' %>
+            <div class="pending-tracks">
+              <h3>pending tracks</h3>
+              <% @data_url = "https://res.cloudinary.com/dae1kvpyn/" + song_track.track["uploaded_file"] %>
+              <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="owner-user-track pending">
+                <div class="wave-and-butt">
+                  <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
+                  <canvas class="waveform" width="700px" height="75"></canvas>
+                  <div class="solo-mute-btns">
+                    <button class="mute"><i class="fas fa-volume-up"></i></button>
+                    <button class="solo">S</button>
+                  </div>
+                </div>
+                <div class="track-user-picture">
+                  <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                </div>
+                <%= link_to "Delete", song_track_path(song_track), method: :delete%>
+                <%= link_to "Accept", song_track_path(song_track), method: :patch %>
+              </li>
+            </div>
           <% end %>
         <% end %>
+      <% end %>
+    </div>
 
-
-     <%= link_to 'Download Project', @download_link %>
+    <%= link_to 'Download Project', @download_link %>
     </div>
   </div>
 </div>

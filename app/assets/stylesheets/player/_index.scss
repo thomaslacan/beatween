@@ -66,9 +66,13 @@
 }
 
 .playhead-container {
-  position: relative;
+  position: absolute;
   margin-left: 0px;
   border-radius: 5px;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: 700px;
 }
 
 .mute, .solo {
@@ -84,8 +88,10 @@
 .solo {
   font-weight: 700;
 }
-
-#tracks-container {
+.tracks-container {
+  margin-top: 20px;
+  margin-bottom: 100px;
+  position: relative;
 }
 
 #track-container li {
