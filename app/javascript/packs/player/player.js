@@ -42,7 +42,6 @@ export default class Player {
           track.play(0, track.buffer.duration/(track.canvas.clientWidth/this.clickPosition))
           this.status = 'running'
         });
-        this.playHead();
       } else {
         this.tracks.forEach((track) => {
           track.stop(this.audioContext.currentTime)
@@ -53,6 +52,7 @@ export default class Player {
           this.status = 'running'
         })
       }
+      this.playHead(this.clickPosition);
     });
 
     const playBtn = document.getElementById('play');
@@ -165,7 +165,7 @@ export default class Player {
     }
   }
 
-  frame() {
+  frame(position) {
     const duration = this.tracks[0].source.buffer.duration
     const width = this.tracks[0].canvas.clientWidth
     var elem = document.getElementById("playhead");
@@ -178,12 +178,23 @@ export default class Player {
         play.innerHTML = '<i class="fas fa-play-circle"></i>';
       });
     } else {
-      elem.style.left = pos + 'px';
+      if (position) {
+        // fix playhead position
+        let newPos = pos + position - 10
+        elem.style.left = newPos + 'px';
+      } else {
+        elem.style.left = pos + 'px';
+      }
     }
   }
 
-  playHead() {
-    this.playInterval = setInterval(()=>{this.frame()}, 100);
+  playHead(position) {
+    if (position) {
+      clearInterval(this.playInterval);
+      this.playInterval = setInterval(()=>{this.frame(position)}, 100);
+    } else {
+      this.playInterval = setInterval(()=>{this.frame()}, 100);
+    }
   }
 
   stopHead() {
