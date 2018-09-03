@@ -30,7 +30,7 @@
           <div class="active-tracks">
             <% if song_track.status != 'pending' %>
               <% @data_url = "https://res.cloudinary.com/dae1kvpyn/" + song_track.track["uploaded_file"] %>
-              <% if song_track.track.user == @song.user %>
+              <% if @song.user == current_user %>
                 <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="owner-user-track">
                   <div class="wave-and-butt">
                     <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
@@ -43,6 +43,7 @@
                   <div class="exit-controls">
                     <div class="track-user-picture">
                       <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                      <%= link_to "Delete", song_track_path(song_track), method: :delete, class: 'btn btn-danger' %>
                     </div>
                   </div>
                 </li>
@@ -60,7 +61,7 @@
                     <div class="track-user-picture">
                       <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
                     </div>
-                    <%= link_to "Delete", song_track_path(song_track), method: :delete%>
+                    <%= link_to "Delete", song_track_path(song_track), method: :delete, class: 'btn btn-danger' %>
                   </div>
                   </li>
                 <% else %>
@@ -96,13 +97,13 @@
                   <div class="wave-and-butt">
                     <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
                     <canvas class="waveform" width="700px" height="75"></canvas>
-                    <%= link_to "Listen", song_track_path(song_track), method: :patch %>
                   </div>
                   <div class="solo-mute-btns">
                   </div>
                   <div class="exit-controls">
                     <div class="track-user-picture">
                       <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                      <%= link_to "Listen", song_track_path(song_track), method: :patch, class: 'btn btn-primary' %>
                     </div>
                   </div>
                 </li>
