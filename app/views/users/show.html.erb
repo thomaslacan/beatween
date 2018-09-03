@@ -1,71 +1,39 @@
-<div class="container">
-  <div><h1>.pro</h1></div>
-  <div><h1>file</h1></div>
-  <div class="row">
-    <div class="col-xs-4">
-      <div> <%= cl_image_tag @user.photo, height: 260, width: 260, crop: :fill, class: "img-circle" %>  </div>
-    </div>
-    <div class="col-xs-4">
-      <h3> <%= @user.username %> </h3>
-    </div>
-    <div class="col-xs-4">
-      <div><h4>Description</h4></div>
-      <div> <%= @user.description %></div>
-    </div>
+<div><h1>.pro</h1></div>
+<div><h1>file</h1></div>
+<div class="user-description">
+  <div class="user-data">
+    <div class="user-username"><%= @user.username %></div>
+    <div class="user-userdescription"><%= @user.description %></div>
   </div>
-  <div><h3>My Songs</h3></div>
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="show-box">
-        <div class="category">
-          <div class="row">
-            <div class="col-xs-2">
+  <div class="user-photo">
+    <%= cl_image_tag @user.photo, height: 260, width: 260, crop: :fill, class: "img-circle" %>
+  </div>
+</div>
+<div class="user-songs">
+  <h3>My Songs</h3>
+  <div class="user-songs-grid">
+    <% @user.songs.each do |song| %>
+      <%= link_to song_path(song) do %>
+      <div class="user-song-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path song.photo%>'); background-size: cover">
+          <div class="user-song-card-content">
+            <div class="user-song-card-name">
+              <%= song.name %>
             </div>
-            <div class="col-xs-2">
-              <h4>Name</h4>
-            </div>
-            <div class="col-xs-2">
-              <h4>BPM</h4>
-            </div>
-            <div class="col-xs-2">
-              <h4>Duration</h4>
-            </div>
-            <div class="col-xs-2">
-              <h4>Genre</h4>
-            </div>
-            <div class="col-xs-2">
-              <h4>Rating</h4>
+            <div class="user-song-card-metada">
+              <span class="user-song-card-bpm">
+                <i class="fas fa-heartbeat"></i> <%= song.bpm %>
+              </span>
+              <span class="user-song-card-duration">
+                <i class="fas fa-clock"></i> <%= song.duration / 60000 %>:<%= song.duration / 10000 % 60 %>
+              </span>
+              <span class="user-song-card-genre">
+                <i class="fas fa-music"></i> <%= song.genre.name%>
+              </span>
             </div>
           </div>
         </div>
-        <div class="song-card">
-          <% @user.songs.each do |song| %>
-            <div class="row">
-              <div class="col-xs-2">
-                <div>
-                  <%= cl_image_tag song.photo, height: 130, width: 130, crop: :fill%>
-                </div>
-              </div>
-              <div class="col-xs-2">
-                <div>
-                  <%= song.name %>
-                </div>
-              </div>
-              <div class="col-xs-2">
-                <div><%= song.bpm %></div>
-              </div>
-              <div class="col-xs-2">
-                <div><%= song.duration %></div>
-              </div>
-              <div class="col-xs-2">
-                <div><%= song.genre.name %></div>
-              </div>
-              <div class="col-xs-2">
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
+
