@@ -1,0 +1,18 @@
+const myLi = document.querySelectorAll('.current-user-track');
+
+myLi.forEach((li) => {
+  li.addEventListener('mouseenter', (event) => {
+    console.log('heard it');
+    const trackUserPicture = li.querySelector('.track-user-picture');
+    trackUserPicture.innerHTML = '<p>Delete</p>';
+  });
+
+  li.addEventListener('mouseout', (event) => {
+    console.log('heard it');
+    const trackUserPicture = li.querySelector('.track-user-picture');
+    trackUserPicture.innerHTML = '<%= cl_image_tag track.user.photo, width: 50, height: 50, crop: :fill %>';
+    });
+  }
+)
+
+export {addDeleteButton};

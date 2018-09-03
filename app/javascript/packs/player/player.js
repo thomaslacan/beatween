@@ -43,9 +43,14 @@ export default class Player {
         });
         this.playHead();
       } else {
-        // this.tracks.forEach((track) => {
-        //   track.play();
-        // });
+        this.tracks.forEach((track) => {
+          track.stop(this.audioContext.currentTime)
+        });
+        this.tracks.forEach((track) => {
+          track.decode();
+          track.play(0, track.buffer.duration/(track.canvas.clientWidth/this.clickPosition));
+          this.status = 'running'
+        })
       }
     });
 
