@@ -1,14 +1,6 @@
 .track {
-  width: 100%;
   height: 75px;
   margin: 3px 0px;
-}
-
-#player-navbar {
-  width: 750px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 #buttons-player {
@@ -47,13 +39,31 @@
 }
 
 #fake-track {
-  background-color: red;
-  width: 100%;
+  background-color: #f30e5c;
   height: 75px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  width: 840px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 24px;
+  opacity: 0.6;
+}
+
+#fake-track:hover {
+  opacity: 1;
+}
+
+#fake-track a {
+  color: #fff;
+  text-decoration: none;
 }
 
 .player-container {
-  width: 100%;
+  margin: 0 auto;
+  max-width: 70vw;
 }
 
 #playhead {
@@ -72,7 +82,6 @@
   top: 0px;
   left: 0px;
   bottom: 0px;
-  width: 700px;
 }
 
 .mute, .solo {
@@ -89,9 +98,14 @@
   font-weight: 700;
 }
 .tracks-container {
-  margin-top: 20px;
-  margin-bottom: 100px;
+  // margin-top: 0 auto;
   position: relative;
+}
+
+.pending-tracks-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 #track-container li {
@@ -112,8 +126,8 @@
   justify-content: space-between;
   padding: 0;
   position: relative;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   width: 700px;
 }
 
@@ -125,8 +139,9 @@
   position: relative;
   height: 75px;
   background-color: red;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 140px;
 }
 
 .owner-user-track .wave-and-butt, .owner-user-track .solo-mute-btns {
@@ -168,7 +183,6 @@
   font-size: 14px;
   font-family: Raleway;
   font-weight: 100;
-  max-width: 100px;
   position: absolute;
   top: 4px;
   left: 10px;
@@ -177,6 +191,7 @@
 .track-user-picture img {
   margin-left: 10px;
   box-shadow: 1px 1px 3px #474a56;
+  border-radius: 50%;
 }
 
 .drum {
@@ -243,4 +258,38 @@
   background-color: #feff89;
   color: #000;
   border: 0px solid #000;
+}
+
+/* pending tracks */
+
+.pending-tracks {
+  list-style: none;
+}
+
+.pending-title {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-style: italic;
+}
+
+.pending-tracks li {
+    line-height: 80%;
+    margin-bottom: 5px;
+    display: flex;
+    justfiy-content: space-between;
+    align-items: center;
+    width: 835px;
+}
+
+.pending-tracks .wave-and-butt, .pending-tracks .solo-mute-btns {
+  background-color: #929aab;
+}
+
+.exit-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
