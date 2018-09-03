@@ -2,18 +2,17 @@
   <div class="form-container">
     <div class="form-content">
       <div class="song-card col-xs-6 col-sm-6 col-md-12 ">
-        <%= image_tag "Trippywaveform.gif", alt: "alttext" %>
           <div class="song-card-content-wrapper">
-            <div class="song-card-content">
-              <div class="song-card-name">
                 <h1>Add ur Track</h1>
                 <%= simple_form_for [@song, @track] do |f| %>
                 <%= f.input :description %>
-<!--                 <%= f.input :bpm %>
- -->            <%= f.input :uploaded_file %>
+                <%= f.input :bpm %>
+                <%= f.input :uploaded_file %>
                 <%= f.input :uploaded_file_cache, as: :hidden %>
                 <%= f.submit "Add", class: "btn btn-success" %>
                 <% end %>
+            <div class="song-card-content">
+              <div class="song-card-name">
               </div>
             </div>
           </div>
