@@ -36,7 +36,8 @@
                     <button class="solo">S</button>
                   </div>
                   <div class="track-user-picture">
-                  <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                    <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                  </div>
                 </li>
               <% elsif song_track.track.user == current_user %>
                 <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="current-user-track">
@@ -47,7 +48,9 @@
                     <button class="solo">S</button>
                   </div>
                   <div class="track-user-picture">
-                  <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                    <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                  </div>
+                  <%= link_to "Delete", song_track_path(song_track), method: :delete%>
                 </li>
               <% else %>
                 <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="other-user-track">
@@ -58,7 +61,8 @@
                     <button class="solo">S</button>
                   </div>
                   <div class="track-user-picture">
-                  <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                    <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                  </div>
                 </li>
               <% end %>
             <% else %>
@@ -76,6 +80,7 @@
                   <div class="track-user-picture">
                     <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
                   </div>
+                  <%= link_to "Delete", song_track_path(song_track), method: :delete%>
                 </li>
               <% end %>
             <% end %>
