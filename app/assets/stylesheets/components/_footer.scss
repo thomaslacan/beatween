@@ -1,18 +1,22 @@
-.inner-footer {
-  position: relative;
-  bottom: 0px;
-  background-color: rgb(37, 41, 46);
-  width: 100%;
-  padding: 8px 50px;
+.footer {
+  background-color: #24292e;
   margin-top: 20px;
+}
+
+.text-muted {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  bottom: 0;
-  color: white;
-  font-weight: lighter;
+  padding: 30px;
+  color: #fff;
 }
 
-.social li {
-  padding-top: 10px;
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.social-links div {
+  padding: 20px;
 }
