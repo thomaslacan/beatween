@@ -12,8 +12,11 @@
   <div class="player-container">
     <div id="buttons-player">
       <div>
-        <button id="play" disabled><i class="fas fa-play-circle"></i></button>
-        <button id="clear">Clear solos</button>
+        <div class="player-top">
+          <button id="play" disabled><i class="fas fa-play-circle"></i></button>
+          <button id="clear">Clear solos</button>
+          <%= link_to 'Download Project', @download_link, class: 'btn-download'%>
+        </div>
       </div>
     </div>
     <div class="tracks-container">
@@ -112,6 +115,5 @@
         <% end %>
       </div>
     </div>
-    <%= link_to 'Download Project', @download_link %>
   </div>
 </div>
