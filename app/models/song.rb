@@ -8,6 +8,7 @@ class Song < ApplicationRecord
   validates :description,  presence: true
   validates :bpm, presence: true, numericality: {only_integer: true}
   validates :genre_id, presence: true
+  validates :photo, presence: true
 
   mount_uploader :photo, PhotoUploader
 

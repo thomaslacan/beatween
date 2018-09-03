@@ -29,6 +29,8 @@ class SongsController < ApplicationController
   def create
     @song = Song.new(songs_params)
     @genre = Genre.where(name: genre_params[:genre]).first
+    @duration = @song.duration * 1000
+    @song.duration = @duration
     @song.genre = @genre
     @song.user = current_user
     if @song.save
