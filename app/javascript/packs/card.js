@@ -3,7 +3,7 @@ const contentMetadata = document.querySelector('.song-card-metada');
 
 
 allCards.forEach((card) => {
-  card.addEventListener('mouseenter', (event) => {
+  card.addEventListener('mouseover', (event) => {
     event.preventDefault();
     const contentMetadata = event.currentTarget.querySelector('.song-card-metada');
     const contentBackground = event.currentTarget.querySelector('.song-card-content-bg');
