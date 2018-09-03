@@ -18,7 +18,7 @@
             <div class="dropdown-item"><%= cl_image_tag current_user.photo, width: 50, height: 50, crop: :fill %>
             </div>
             <div class="dropdown-item"><%= link_to "Discover", songs_path %></div>
-            <div class="dropdown-item"><%= link_to "Profile", "#" %></div>
+            <div class="dropdown-item"><%= link_to "Profile", user_path(current_user) %></div>
             <div class="dropdown-item">
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i><%= t(".sign_out", default: "Log out") %>
