@@ -16,12 +16,12 @@
         <button id="clear">Clear solos</button>
       </div>
     </div>
+    <div id="fake-track">
+      <%= link_to new_song_track_path(@song.id) do %>
+        Add your own track
+      <% end %>
+    </div>
     <div class="tracks-container">
-      <div id="fake-track">
-        <%= link_to new_song_track_path(@song.id) do %>
-          Add your own track
-        <% end %>
-      </div>
       <div class="playhead-container">
         <div id="playhead"></div>
       </div>

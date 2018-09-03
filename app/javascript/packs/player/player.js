@@ -36,6 +36,7 @@ export default class Player {
     playHead.addEventListener('click', (event) => {
       console.log(event.layerX)
       this.clickPosition = event.layerX
+      console.log('io')
       if (this.status === 'stop') {
         this.tracks.forEach((track) => {
           track.play(0, track.buffer.duration/(track.canvas.clientWidth/this.clickPosition))

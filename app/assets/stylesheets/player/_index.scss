@@ -72,7 +72,7 @@
   position: absolute;
   background-color: #0009C2;
   opacity: 1;
-  z-index: 1;
+  // z-index: 1;
 }
 
 .playhead-container {
@@ -82,6 +82,8 @@
   top: 0px;
   left: 0px;
   bottom: 0px;
+  width: 700px;
+  z-index: 1;
 }
 
 .mute, .solo {
