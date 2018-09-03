@@ -16,6 +16,8 @@ class SongsController < ApplicationController
     @download_link = Cloudinary::Utils.download_zip_url(
         :public_ids => @uploaded_files,
         :resource_type => 'video')
+    @song_tracks = @song.song_tracks
+
     @minutes = @song.duration / 60000
     @seconds = @song.duration / 10000 % 60
   end

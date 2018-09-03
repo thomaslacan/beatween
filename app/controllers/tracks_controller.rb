@@ -30,14 +30,6 @@ class TracksController < ApplicationController
   #   redirect_to song_path(@song)
   # end
 
-  # def destroy
-  #   @user == current_user
-  #   @track = Track.find(params[:id])
-  #   @track.destroy
-  #   redirect_to songs_path
-  # end
-
-
   private
 
   def track_params
