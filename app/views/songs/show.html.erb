@@ -9,17 +9,19 @@
 </div>
 
 <div class="container">
-  <div class="container player-container">
+  <div class="player-container">
     <div id="buttons-player">
       <div>
         <button id="play" disabled><i class="fas fa-play-circle"></i></button>
         <button id="clear">Clear solos</button>
       </div>
-      <%= link_to new_song_track_path(@song.id) do %>
-        <div id="add-button">Add your track</div>
-      <% end %>
     </div>
     <div class="tracks-container">
+      <%= link_to new_song_track_path(@song.id) do %>
+        <div id="fake-track">
+          Add your track
+        </div>
+      <% end %>
       <div class="playhead-container">
         <div id="playhead">
         </div>
@@ -33,6 +35,8 @@
                     <div class="wave-and-butt">
                       <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
                       <canvas class="waveform" width="700px" height="75"></canvas>
+                    </div>
+                    <div class="solo-mute-btns">
                       <button class="mute"><i class="fas fa-volume-up"></i></button>
                       <button class="solo">S</button>
                     </div>
@@ -45,6 +49,8 @@
                     <div class="wave-and-butt">
                       <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
                       <canvas class="waveform" width="700px" height="75"></canvas>
+                    </div>
+                    <div class="solo-mute-btns">
                       <button class="mute"><i class="fas fa-volume-up"></i></button>
                       <button class="solo">S</button>
                     </div>
@@ -58,6 +64,8 @@
                     <div class="wave-and-butt">
                       <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
                       <canvas class="waveform" width="700px" height="75"></canvas>
+                    </div>
+                    <div class="solo-mute-btns">
                       <button class="mute"><i class="fas fa-volume-up"></i></button>
                       <button class="solo">S</button>
                     </div>
@@ -82,10 +90,10 @@
                   <div class="wave-and-butt">
                     <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
                     <canvas class="waveform" width="700px" height="75"></canvas>
-                    <div class="solo-mute-btns">
-                      <button class="mute"><i class="fas fa-volume-up"></i></button>
-                      <button class="solo">S</button>
-                    </div>
+                  </div>
+                  <div class="solo-mute-btns">
+                    <button class="mute"><i class="fas fa-volume-up"></i></button>
+                    <button class="solo">S</button>
                   </div>
                   <div class="track-user-picture">
                     <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
