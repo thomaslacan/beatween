@@ -27,14 +27,28 @@
 
 #play {
   background-color: #fff;
+  color: rgb(157, 217, 182);
+  border: 0px solid #000;
+  font-size: 96px;
+}
+
+#play:hover {
+  background-color: #fff;
   color: #359768;
   border: 0px solid #000;
   font-size: 96px;
+
 }
 
 #clear {
   border: 0px solid #000;
   color: #ffbc2c;
+  font-weight: 900;
+}
+
+#clear:hover {
+  border: 0px solid #000;
+  color: rgb(255, 254, 153);
   font-weight: 900;
 }
 
@@ -292,4 +306,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.btn-download {
+  background-color: rgb(38, 41, 46);
+  color: white;
+  padding: 7px 5px;
+  border-radius: 4px;
+  text-decoration: none;
 }
