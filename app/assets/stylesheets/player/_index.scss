@@ -1,332 +1,48 @@
-.track {
-  height: 75px;
-  margin: 3px 0px;
-}
 
-#buttons-player {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
-#buttons-player a {
-  text-decoration: none;
-}
 
-#add-button {
-  background-color: #1daa25;
-  color: #fff;
-  padding: 30px 40px;
-  border-radius: 5px;
-}
 
-#add-button:hover {
-  cursor: pointer;
-  box-shadow: 1px 1px 3px #474a56;
-}
-
-#play {
-  background-color: #fff;
-  color: rgb(157, 217, 182);
-  border: 0px solid #000;
-  font-size: 96px;
-}
-
-#play:hover {
-  background-color: #fff;
-  color: #359768;
-  border: 0px solid #000;
-  font-size: 96px;
-
-}
-
-#clear {
-  border: 0px solid #000;
-  color: #ffbc2c;
-  padding: 7px 5px;
-  font-weight: 900;
-}
-
-#clear:hover {
-  background-color: rgb(38, 41, 46);
-  color: rgb(255, 254, 153);
-  padding: 7px 5px;
-  border-radius: 4px;
-  text-decoration: none;
-}
-
-#fake-track {
-  background-color: rgb(170, 215, 184);
-  height: 75px;
-  margin-bottom: 5px;
-  border-radius: 10px;
-  width: 840px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 24px;
-  opacity: 0.6;
-}
-
-#fake-track:hover {
-  opacity: 1;
-}
-
-#fake-track a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.player-container {
-  margin: 0 auto;
-  max-width: 70vw;
-}
-
-#playhead {
-  height: 100%;
-  width: 4px;
-  position: absolute;
-  border-radius: 2px;
-  background-color: rgb(37, 41, 46);
-  opacity: 1;
-  // z-index: 1;
-}
-
-.playhead-container {
-  position: absolute;
-  margin-left: 0px;
-  border-radius: 5px;
-  top: 0px;
-  left: 0px;
-  bottom: 0px;
-  width: 700px;
-  z-index: 1;
-}
-
-.mute, .solo {
-  background-color: transparent;
-  border-radius: 5px;
-  margin: 5px;
-  border: 2px solid #fff;
-  color: #fff;
-  width: 40px;
-  height: 40px;
-}
-
-.solo {
-  font-weight: 700;
-}
-.tracks-container {
-  // margin-top: 0 auto;
-  position: relative;
-}
-
-.pending-tracks-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#track-container li {
-  line-height: 80%;
-  margin-bottom: 5px;
-  display: flex;
-  justfiy-content: space-between;
-  align-items: center;
-}
-
-.muted-track {
-  background-color: #bbb;
-}
-
-.wave-and-butt {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0;
-  position: relative;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  width: 700px;
-}
-
-.solo-mute-btns {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  position: relative;
-  height: 75px;
-  background-color: red;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  width: 140px;
-}
-
-.owner-user-track .wave-and-butt, .owner-user-track .solo-mute-btns {
-  background: rgb(37, 41, 46);
-}
-
-.current-user-track .wave-and-butt, .current-user-track .solo-mute-btns  {
-  background-color: rgb(157, 217, 182);
-}
-
-.other-user-track .wave-and-butt, .other-user-track .solo-mute-btns {
-  background-color: rgb(80, 122, 182);
-}
-
-.current-user-track .wave-and-butt .track-description {
-  background-color: #fff;
-  border: 0px solid #fff;
-}
-
-.current-user-track .wave-and-butt .track-description:hover {
-  background-color: #dd0a35;
-}
-
-#track-container li img {
-  border-radius: 50%;
-}
-
-.song-show-track-type {
-  font-weight: 100;
-  font-family: Raleway;
-  font-size: 18px;
-}
-
-.track-description {
-  padding: 5px;
-  border-radius: 5px;
-  color: #fff;
-  text-align: center;
-  font-size: 14px;
-  font-family: Raleway;
-  font-weight: 100;
-  position: absolute;
-  top: 4px;
-  left: 10px;
-}
-
-.track-user-picture img {
-  margin-left: 10px;
-  box-shadow: 1px 1px 3px #474a56;
-  border-radius: 50%;
-}
-
-.drum {
-  border: 1px solid #feff89;
-  color: #feff89;
-}
-
-.drum:hover {
-  background-color: #feff89;
-  border: 0px solid #feff89;
-  color: #000;
-}
-
-.synth {
-  border: 1px solid #e62a76;
-  color: #e62a76;
-}
-
-.synth:hover {
-  background-color: #e62a76;
-  border: 0px solid #e62a76;
-  color: #fff;
-}
-
-.voice {
-  border: 1px solid #dd0a35;
-  color: #dd0a35;
-}
-
-.voice:hover {
-  background-color: #dd0a35;
-  border: 0px solid #dd0a35;
-  color: #fff;
-}
-
-.guitar {
-  border: 1px solid #ff9900;
-  color: #ff9900;
-}
-
-.guitar:hover {
-  background-color: #ff9900;
-  border: 0px solid #ff9900;
-  color: #fff;
-}
-
-// . {
-//   background-color: #1d97c1;
+// .drum {
+//   border: 1px solid #feff89;
+//   color: #feff89;
 // }
 
-// . {
-//   background-color: #17bebb;
+// .drum:hover {
+//   background-color: #feff89;
+//   border: 0px solid #feff89;
+//   color: #000;
 // }
 
-// . {
-//   background-color: #2b007b;
+// .synth {
+//   border: 1px solid #e62a76;
+//   color: #e62a76;
 // }
 
-// . {
-//   background-color: ;
+// .synth:hover {
+//   background-color: #e62a76;
+//   border: 0px solid #e62a76;
+//   color: #fff;
 // }
 
-.solo-on {
-  background-color: #feff89;
-  color: #000;
-  border: 0px solid #000;
-}
+// .voice {
+//   border: 1px solid #dd0a35;
+//   color: #dd0a35;
+// }
 
-/* pending tracks */
+// .voice:hover {
+//   background-color: #dd0a35;
+//   border: 0px solid #dd0a35;
+//   color: #fff;
+// }
 
-.pending-tracks {
-  list-style: none;
-}
+// .guitar {
+//   border: 1px solid #ff9900;
+//   color: #ff9900;
+// }
 
-.pending-title {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  font-style: italic;
-}
+// .guitar:hover {
+//   background-color: #ff9900;
+//   border: 0px solid #ff9900;
+//   color: #fff;
+// }
 
-.pending-tracks li {
-    line-height: 80%;
-    margin-bottom: 5px;
-    display: flex;
-    justfiy-content: space-between;
-    align-items: center;
-    width: 835px;
-}
-
-.pending-tracks .wave-and-butt, .pending-tracks .solo-mute-btns {
-  background-color: #929aab;
-}
-
-.exit-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.btn-download {
-  background-color: white;
-  color: rgb(37, 41, 46);
-  padding: 7px 7px;
-  border-radius: 4px;
-  border: 1px solid rgb(37, 41, 46);
-  text-decoration: none;
-}
-
-.btn-download:hover {
-  background-color: rgb(38, 41, 46);
-  color: white;
-  padding: 7px 7px;
-  border-radius: 4px;
-  text-decoration: none;
-}
