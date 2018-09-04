@@ -2,7 +2,11 @@
   <div class="song-details-container" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @song.photo%>');">
     <div class="song-details-content">
       <h1><%= @song.name %></h1>
-      <p>A project by <%= @song.user["first_name"] %> <%= @song.user["last_name"] %></p>
+      <p> A project by
+        <%= link_to user_path(@song.user) do %>
+          <%= @song.user["first_name"] %> <%= @song.user["last_name"] %>
+        <% end %>
+      </p>
       <p class="track-metadata">Made with <i class="fas fa-heart"></i> at <%= @song.bpm %> bpm | <i class="fas fa-clock"></i> <%= @minutes %>:<%= @seconds %> | <i class="fas fa-music"></i> <%= @song.genre.name %></p>
     </div>
   </div>
