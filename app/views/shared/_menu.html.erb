@@ -5,9 +5,21 @@
     <% end %>
   </div>
   <div id="navbar-nav">
+
+    <!-- search button -->
+    <div id="navbar-search-field">
+      <div id="search-button" class="purple-search">
+        <%= link_to "#" do %><i class="fas fa-search"></i><% end %>
+      </div>
+      <%= render "songs/search" %>
+    </div>
+
+    <!-- add a song -->
     <div id="menu-add-song">
       <%= link_to 'Add a song', new_song_path, class: 'btn btn-default' %>
     </div>
+
+    <!-- dropdown menu -->
     <div id="menu-menu">
       <div class="dropdown" id="main-menu">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

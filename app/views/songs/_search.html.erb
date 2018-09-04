@@ -1,0 +1,17 @@
+<div id="search-bar" class="form-invisible">
+  <div class="forms-search">
+    <div>
+      <%= form_tag songs_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          id:"form-start",
+          placeholder: "Search a song, user, genre"
+        %>
+    </div>
+    <div>
+      <%= button_tag "Search" , class: "btn-search"%>
+      <% end %>
+    </div>
+  </div>
+</div>

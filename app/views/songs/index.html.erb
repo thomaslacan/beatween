@@ -2,11 +2,6 @@
     <div class="image-titre-index-song">
         <img src="https://res.cloudinary.com/dae1kvpyn/image/upload/v1536050467/discover-real.svg" width="100" height="100">
     </div>
-  <%= link_to "#" do %>
-    <div id="search-button" class="purple-search">
-      <i class="fas fa-search"></i>
-    </div>
-  <% end %>
 
   <% if @songs.count == 0 %>
     <h3>no results</h3>
@@ -18,23 +13,6 @@
           <% @seconds = song.duration / 10000 % 60 %>
           <%= render 'card', song: song%>
         <% end %>
-      </div>
-      <div id="search-bar" class="invisible">
-        <div class="forms-search">
-          <div>
-            <%= form_tag songs_path, method: :get do %>
-              <%= text_field_tag :query,
-                params[:query],
-                class: "form-control",
-                id:"form-start",
-                placeholder: "Search a song, user, genre"
-              %>
-          </div>
-          <div>
-            <%= button_tag "Search" , class: "btn-search"%>
-            <% end %>
-          </div>
-        </div>
       </div>
     </div>
   <% end %>
