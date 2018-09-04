@@ -60,7 +60,7 @@
                         </div>
                       </li>
                     <% elsif song_track.track.user == current_user %>
-                      <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="current-user-track">
+                      <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="current-user" >
                         <div class="wave-and-butt">
                           <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
                           <canvas class="waveform" width="700px" height="75"></canvas>
@@ -73,11 +73,15 @@
                           <div class="track-user-picture">
                             <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
                           </div>
-                          <%= link_to "Delete", song_track_path(song_track), method: :delete, class: 'btn btn-danger' %>
+                          <div class="delete-button">
+                            <%= link_to song_track_path(song_track), method: :delete do %>
+                              <i class="far fa-minus-square"></i>
+                            <% end %>
+                          </div>
                         </div>
                       </li>
                     <% else %>
-                      <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="other-user-track">
+                      <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="other-user">
                         <div class="wave-and-butt">
                           <div class="track-description <%= song_track.track.description.downcase %>"> <%= song_track.track.description.capitalize %></div>
                           <canvas class="waveform" width="700px" height="75"></canvas>
