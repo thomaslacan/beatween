@@ -41,3 +41,20 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.user-username {
+  font-size: 1.2em;
+}
+
+.user-userdescription {
+  font-weight: lighter;
+}
+
+.user-data {
+  color: white;
+  background-color: rgba(37, 41, 46, 0.7);
+  border-radius: 4px;
+  padding: 15px 10px;
+  height: 170px;
+  width: 800px;
+}
