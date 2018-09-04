@@ -32,3 +32,16 @@
 .song-details-content {
   padding-left: 15px;
 }
+
+.song-details-content a {
+  color: white;
+  text-decoration: none;
+}
+
+.song-details-content a:hover {
+  color: white;
+  background-color: black;
+  border-radius: 4px;
+  padding: 4px 6px;
+  text-decoration: none;
+}
