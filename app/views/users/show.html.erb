@@ -5,6 +5,7 @@
   <div class="user-description">
     <div class="user-data">
       <div class="user-username"><strong><%= @user.username %></strong></div>
+      <br>
       <div class="user-userdescription"><%= @user.description %></div>
     </div>
     <div class="user-photo">
@@ -12,7 +13,11 @@
     </div>
   </div>
   <div class="user-songs">
-    <h3>My Songs</h3>
+    <% if @user == current_user %>
+      <h3>My Songs</h3>
+    <% else %>
+      <h3> <%= @user.username %> Songs </h3>
+    <% end %>
     <div class="row user-songs-grid">
       <% @user.songs.each do |song| %>
         <%= link_to song_path(song) do %>
