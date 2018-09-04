@@ -34,25 +34,25 @@ export default class Player {
   init() {
     const playHead = document.querySelector('.playhead-container')
     playHead.addEventListener('click', (event) => {
-      console.log(event.layerX)
-      this.clickPosition = event.layerX
-      console.log('io')
-      if (this.status === 'stop') {
-        this.tracks.forEach((track) => {
-          track.play(0, track.buffer.duration/(track.canvas.clientWidth/this.clickPosition))
-          this.status = 'running'
-        });
-      } else {
-        this.tracks.forEach((track) => {
-          track.stop(this.audioContext.currentTime)
-        });
-        this.tracks.forEach((track) => {
-          track.decode();
-          track.play(0, track.buffer.duration/(track.canvas.clientWidth/this.clickPosition));
-          this.status = 'running'
-        })
+      if (event.target.classList.contains('waveform')) {
+        this.clickPosition = event.layerX
+        if (this.status === 'stop') {
+          this.tracks.forEach((track) => {
+            track.play(0, track.buffer.duration/(track.canvas.clientWidth/this.clickPosition))
+            this.status = 'running'
+          });
+        } else {
+          this.tracks.forEach((track) => {
+            track.stop(this.audioContext.currentTime)
+          });
+          this.tracks.forEach((track) => {
+            track.decode();
+            track.play(0, track.buffer.duration/(track.canvas.clientWidth/this.clickPosition));
+            this.status = 'running'
+          })
+        }
+        this.playHead(this.clickPosition);
       }
-      this.playHead(this.clickPosition);
     });
 
     const playBtn = document.getElementById('play');

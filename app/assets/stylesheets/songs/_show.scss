@@ -1,6 +1,10 @@
-.tracks-container a, .tracks-container a:hover {
+.tracks-container a, .tracks-container a:hover, .fake-player a, .fake-player a:hover {
   text-decoration: none;
   color: #fff;
+}
+
+.tracks-container {
+  position: relative;
 }
 
 .full-background {
@@ -16,7 +20,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .full-container {
@@ -48,6 +51,26 @@
 
 #play:hover {
   cursor: pointer;
+}
+
+
+#download {
+  padding-left: 10px;
+}
+
+.controls-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls-buttons button {
+  background-color: #fff;
+  border: 0px solid #000;
+}
+
+.controls-buttons a {
+  text-decoration: none;
 }
 
 /* song details */
@@ -123,9 +146,19 @@
   height: 100%;
   width: 4px;
   position: absolute;
-  background-color: red;
+  background-color: #0009C2;
   opacity: 1;
   z-index: 1;
+}
+
+.playhead-container {
+  position: relative;
+  margin-left: 0px;
+  border-radius: 5px;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: 700px;
 }
 
 .wave-and-butt {
@@ -249,4 +282,20 @@
     display: flex;
     justfiy-content: space-between;
     align-items: center;
+}
+
+.pending-title {
+  font-size: 32px;
+  font-weight: 700;
+  padding: 10px 0;
+}
+
+.add-pending a {
+  background-color: transparent;
+  border-radius: 5px;
+  margin: 5px;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 15px 20px;
+  text-decoration: none;
 }
