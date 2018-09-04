@@ -51,10 +51,9 @@
 }
 
 .user-data {
-  color: white;
-  background-color: rgba(37, 41, 46, 0.7);
-  border-radius: 4px;
-  padding: 15px 10px;
+  color: rgb(37, 41, 46);
+  border-bottom: 2px solid rgba(37, 41, 46, 0.7);
+  padding-bottom: 20px;
   height: 170px;
   width: 800px;
 }
