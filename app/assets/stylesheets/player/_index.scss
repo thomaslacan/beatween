@@ -6,11 +6,13 @@
 #buttons-player {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  width: 20%
 }
 
 #buttons-player a {
   text-decoration: none;
+  align: center;
 }
 
 #add-button {
