@@ -43,13 +43,16 @@
 #clear {
   border: 0px solid #000;
   color: #ffbc2c;
+  padding: 7px 5px;
   font-weight: 900;
 }
 
 #clear:hover {
-  border: 0px solid #000;
+  background-color: rgb(38, 41, 46);
   color: rgb(255, 254, 153);
-  font-weight: 900;
+  padding: 7px 5px;
+  border-radius: 4px;
+  text-decoration: none;
 }
 
 #fake-track {
