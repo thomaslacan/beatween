@@ -56,6 +56,21 @@
 
 #download {
   padding-left: 10px;
+  opacity: 0.5;
+  color: #000;
+}
+
+#download:hover {
+  opacity: 1;
+}
+
+#clear {
+  opacity: 0.5;
+  color: #000;
+}
+
+#clear:hover {
+  opacity: 1;
 }
 
 .controls-buttons {
@@ -243,21 +258,14 @@
 .track-description {
   position: absolute;
   left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  border-radius: 10px;
+  top: 10px;
+  border-radius: 4px;
   text-align: center;
-  padding: 10px 20px;
+  padding: 5px 10px;
   font-weight: 200;
   font-size: 14px;
-  opacity: 0.4;
   color: #fff;
 }
-
-.track-description:hover {
-  opacity: 1;
-}
-
 .synth {
   background-color: #53d397;
 }
