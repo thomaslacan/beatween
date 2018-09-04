@@ -7,7 +7,7 @@
       <div class="song-form-layout-container">
        <div class="form-container-new">
         <div class="form-content">
-          <%= simple_form_for@song, @track] do |f| %>
+          <%= simple_form_for [@song, @track] do |f| %>
           <%= f.input :description %>
           <%= f.input :uploaded_file %>
         <%= f.input :uploaded_file_cache, as: :hidden %>
