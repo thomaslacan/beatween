@@ -23,6 +23,11 @@
                 <div class="user-song-card-name">
                   <%= song.name %>
                 </div>
+                <% if song.song_tracks.count <= 1 %>
+                  <%= song.song_tracks.count %> Pending track
+                <% else %>
+                  <%= song.song_tracks.count %> Pending tracks
+                <% end %>
                 <div class="user-song-card-description">
                   <%= song.description %>
                 </div>
