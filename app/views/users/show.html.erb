@@ -1,11 +1,10 @@
 <div class="container">
-  <div class="page-title">
-    <div>.pro</div>
-    <div>file</div>
-  </div>
+  <div class="image-user-show">
+        <img src="https://res.cloudinary.com/dae1kvpyn/image/upload/v1536050558/profile.svg" width="100" height="100">
+    </div>
   <div class="user-description">
     <div class="user-data">
-      <div class="user-username"><%= @user.username %></div>
+      <div class="user-username"><strong><%= @user.username %></strong></div>
       <div class="user-userdescription"><%= @user.description %></div>
     </div>
     <div class="user-photo">
@@ -27,6 +26,11 @@
                   <%= song.description %>
                 </div>
               </div>
+              <% if song.song_tracks.count <= 1 %>
+                <%= song.song_tracks.count %> Pending track
+              <% else %>
+                <%= song.song_tracks.count %> Pending tracks
+              <% end %>
               <div class="user-song-card-metada">
                 <span class="user-song-card-bpm">
                   <i class="fas fa-heartbeat"></i> <%= song.bpm %>

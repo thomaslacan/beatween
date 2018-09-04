@@ -1,14 +1,87 @@
-<div class="container">
-  <div class="form-container">
-    <div class="form-content">
-
-      <h1>Add ur Track</h1>
-      <%= simple_form_for [@song, @track] do |f| %>
-        <%= f.input :description %>
-        <%= f.input :uploaded_file %>
+<div class="wrapper-song">
+  <div class="container-song">
+    <div class="song-form">
+      <div class="image-titre-tracks">
+        <img src="https://res.cloudinary.com/dae1kvpyn/image/upload/v1536050313/add-track.svg" width="100" height="100">
+      </div>
+      <div class="song-form-layout-container">
+       <div class="form-container-new">
+        <div class="form-content">
+          <%= simple_form_for@song, @track] do |f| %>
+          <%= f.input :description %>
+          <%= f.input :uploaded_file %>
         <%= f.input :uploaded_file_cache, as: :hidden %>
-        <%= f.submit "Add", class: "btn btn-success" %>
-      <% end %>
+
+          <!--           <input type="submit" name="commit" value="Create Song" class="form-btn send"  data-disable-with="Create Song"> -->
+
+          <!-- BUTTON ADD -->
+
+        <div class="align-button">
+          <div class="button-back-fix">
+            <a class="btn btn--pulse" href="/songs">
+              <img src=https://res.cloudinary.com/dae1kvpyn/image/upload/v1535987696/back-sound.svg width="80" height="80">
+            </a>
+          </div>
+          <div class="button-add-fix">
+            <button type="submit" id="send" class="send">
+              <svg viewBox="0 0 90.594 59.714">
+                <polyline class="check" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-miterlimit="10" points="1.768,23.532 34.415,56.179 88.826,1.768"/>
+              </svg>
+              <span>Add</span>
+            </button>
+          </div>
+        </div>
+
+            <!-- BUTTON BACK -->
+          <%end%>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+
+  <div class="ui-widget">
+  </div>
+  <% @genres = [] %>
+  <% Genre.all.each do  |genre| %>
+  <% @genres << genre.name %>
+  <% end %>
+
+  <script>
+    $( function() {
+      var array = <%= @genres.inspect.html_safe %>;
+      var availableTags = [
+
+      ];
+      $( "#song_genre" ).autocomplete({
+        source: array
+      });
+    } );
+  </script>
+
+  <script>
+   const btn = document.getElementById('send');
+   btn.addEventListener('click', function send () {
+    btn.classList.add('is-loading');
+
+  // fake API call
+  setTimeout( () => {
+    btn.classList.add('is-success');
+    btn.classList.remove('is-loading');
+    btn.removeEventListener('click', send);
+  }, 10000);
+});
+
+</script>
+
+<script>
+  $(".btn--pulse").click(function(){
+    var bg = $(this).find('.btn--pulse-bg');
+    bg.toggleClass("active");
+    setTimeout(function(){
+     bg.removeClass('active');
+   }, 100);
+  });
+</script>

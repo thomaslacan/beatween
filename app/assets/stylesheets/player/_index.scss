@@ -43,17 +43,20 @@
 #clear {
   border: 0px solid #000;
   color: #ffbc2c;
+  padding: 7px 5px;
   font-weight: 900;
 }
 
 #clear:hover {
-  border: 0px solid #000;
+  background-color: rgb(38, 41, 46);
   color: rgb(255, 254, 153);
-  font-weight: 900;
+  padding: 7px 5px;
+  border-radius: 4px;
+  text-decoration: none;
 }
 
 #fake-track {
-  background-color: #f30e5c;
+  background-color: rgb(170, 215, 184);
   height: 75px;
   margin-bottom: 5px;
   border-radius: 10px;
@@ -84,7 +87,8 @@
   height: 100%;
   width: 4px;
   position: absolute;
-  background-color: #0009C2;
+  border-radius: 2px;
+  background-color: rgb(37, 41, 46);
   opacity: 1;
   // z-index: 1;
 }
@@ -311,9 +315,18 @@
 }
 
 .btn-download {
+  background-color: white;
+  color: rgb(37, 41, 46);
+  padding: 7px 7px;
+  border-radius: 4px;
+  border: 1px solid rgb(37, 41, 46);
+  text-decoration: none;
+}
+
+.btn-download:hover {
   background-color: rgb(38, 41, 46);
   color: white;
-  padding: 7px 5px;
+  padding: 7px 7px;
   border-radius: 4px;
   text-decoration: none;
 }
