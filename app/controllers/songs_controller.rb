@@ -17,6 +17,7 @@ class SongsController < ApplicationController
         :public_ids => @uploaded_files,
         :resource_type => 'video')
     @song_tracks = @song.song_tracks
+    @pending_tracks = @song.song_tracks.where(status: 'pending')
 
     @minutes = @song.duration / 60000
     @seconds = @song.duration / 10000 % 60
