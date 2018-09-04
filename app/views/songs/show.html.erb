@@ -111,7 +111,7 @@
 
       <!-- pending tracks -->
       <div class="pending-tracks-container">
-        <% if current_user == @song.user %>
+        <% if current_user == @song.user && @pending_tracks.count > 0 %>
           <div class="pending-title"><i class="fas fa-users"></i> pending tracks</div>
           <ul class="pending-tracks list-unstyled">
             <% @song_tracks.each do |song_track| %>
