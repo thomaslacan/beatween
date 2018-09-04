@@ -1,4 +1,4 @@
-const colors = ['black-search', 'purple-search', 'pink-search', 'yellow-search', 'palegreen-search', 'orange-search', 'seablue-search', 'turquoise-search', 'violet-search', 'red-search', 'paleyellow-search'];
+const colors = ['black-search', 'purple-search', 'pink-search', 'yellow-search', 'orange-search', 'green-search', 'light-green'];
 const searchColorized = document.getElementById('search-button')
 
 function getRandomIntInclusive(min, max) {
@@ -8,7 +8,7 @@ function getRandomIntInclusive(min, max) {
 }
 
 function switchColor() {
-  let i = getRandomIntInclusive(0, 10);
+  let i = getRandomIntInclusive(0, 4);
   searchColorized.classList = "";
   searchColorized.classList.add(colors[i]);
 }
