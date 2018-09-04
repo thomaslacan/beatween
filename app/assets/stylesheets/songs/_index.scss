@@ -16,62 +16,8 @@
   line-height: 80%;
 }
 
-.cards-minimized {
-  width: 85%;
-}
-
-.invisible {
-  display: none;
-}
-
 .distorted {
   right: 20%!important;
-}
-
-#search-button {
-  font-size: 32px;
-  position: absolute;
-  top: 110px;
-  right: 30px;
-  color: #bbb;
-}
-
-#search-button:hover {
-  opacity: 0.8;
-}
-
-#search-bar {
-  opacity: 0.4;
-  color: #fff;
-  background-color: #bbb;
-  padding: 100px 15px 0px 15px;
-  position: fixed;
-  bottom: 0%;
-  right: 0;
-  width: 18%;
-  height: 100vh;
-}
-
-.btn-search {
-  padding: 10px;
-  color: #000;
-  background-color: #fff;
-  border-radius: 5px;
-  border: 0px solid #000;
-  margin: 10px auto;
-}
-
-.btn-search:hover {
-  padding: 10px;
-  color: #fff;
-  background-color: #000;
-  border-radius: 5px;
-  border: 0px solid #000;
-  margin: 10px auto;
-}
-
-.form-control {
-  border-radius: 5px;
 }
 
 .song-card-content-wrapper {
