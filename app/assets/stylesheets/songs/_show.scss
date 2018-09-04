@@ -1,47 +1,252 @@
-.single-track {
-  width: 100%;
+.tracks-container a, .tracks-container a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.full-background {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  margin: 5px auto;
+  padding: 30px 0px 0px 0px;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.track-description {
-  width: 20%;
+.full-white {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
-.track-sound {
-  width: 70%;
+.full-container {
+  width: 80%;
 }
 
-.track-user img {
-  width: 30px;
-  height: 30px;
+.full-container-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -20px;
+}
+
+.song-header {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.song-details {
+  text-align: right;
+}
+
+#play {
+  font-size: 200px;
+}
+
+#play:hover {
+  cursor: pointer;
+}
+
+/* song details */
+
+.song-title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.song-username {
+  font-weight: 200;
+}
+
+.song-username a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* general player */
+.player-wrapper {
+  background-color: #fff;
+  padding: 20px;
+}
+
+/* player controls */
+.player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  background-color: #fff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 0 30px;
+}
+
+.player-controls a {
+  color: #000;
+}
+
+/* player tracks */
+/* fake track */
+
+.fake-track {
+  width: 840px;
+  border-radius: 10px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 0;
+  opacity: 0.6;
+  font-size: 40px;
+  color: #000;
+  border: 2px dashed #000;
+}
+
+.fake-track:hover {
+  opacity: 1;
+}
+
+/* player normal */
+
+#track-container li {
+  line-height: 80%;
+  margin-bottom: 5px;
+  display: flex;
+  justfiy-content: space-between;
+  align-items: center;
+}
+
+#playhead {
+  height: 100%;
+  width: 4px;
+  position: absolute;
+  background-color: red;
+  opacity: 1;
+  z-index: 1;
+}
+
+.wave-and-butt {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 75px;
+  position: relative;
+}
+
+/* solo and mute buttons */
+.solo-mute-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 75px;
+  min-width: 140px;
+  background-color: red;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.mute, .solo {
+  background-color: transparent;
+  border-radius: 5px;
+  margin: 5px;
+  border: 2px solid #fff;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+}
+
+.solo {
+  font-weight: 700;
+}
+
+.solo-on {
+  background-color: #feff89;
+  color: #000;
+  border: 0px solid #000;
+}
+
+.track-user-picture img {
+  margin-left: 10px;
+  box-shadow: 1px 1px 3px #474a56;
   border-radius: 50%;
 }
 
-.song-details-container {
-  color: white;
-  font-weight: lighter;
-  width: 100vw;
-  padding: 40px 0px 60px 0px!important;
-  background-size: cover;
-  background-position: center;
+/* other buttons */
+
+.exit-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.song-details-content {
-  padding-left: 15px;
+.exit-controls a {
+  color: #000;
+  opacity: 0.4;
+  font-size: 24px;
+  padding-left: 10px;
 }
 
-.song-details-content a {
-  color: white;
-  text-decoration: none;
+/* tracks current user / other user / pending tracks */
+.owner-user .wave-and-butt, .owner-user .solo-mute-btns  {
+  background-color: #24292E;
 }
 
-.song-details-content a:hover {
-  color: white;
-  background-color: black;
-  border-radius: 4px;
-  padding: 4px 6px;
-  text-decoration: none;
+.current-user .wave-and-butt, .current-user .solo-mute-btns  {
+  background-color: #24292E;
+}
+
+.pending-tracks .wave-and-butt, .pending-tracks .solo-mute-btns {
+  background-color: #929aab;
+}
+
+.other-user .wave-and-butt, .other-user .solo-mute-btns {
+  background-color: #1c819e;
+}
+
+/* track descriptions */
+.track-description {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px 20px;
+  font-weight: 200;
+  font-size: 14px;
+  opacity: 0.4;
+  color: #fff;
+}
+
+.track-description:hover {
+  opacity: 1;
+}
+
+.synth {
+  background-color: #53d397;
+}
+
+.guitar {
+  background-color: #fbb901;
+}
+
+.drum {
+  background-color: #00a8b5;
+}
+
+.voice {
+  background-color: #f30e5c;
+}
+
+/* pending tracks */
+
+.pending-tracks li {
+    line-height: 80%;
+    margin-bottom: 5px;
+    display: flex;
+    justfiy-content: space-between;
+    align-items: center;
 }
