@@ -216,6 +216,10 @@
   border: 0px solid #000;
 }
 
+.mute-on {
+  background-color: #f9570c;
+}
+
 .track-user-picture img {
   margin-left: 10px;
   box-shadow: 1px 1px 3px #474a56;
@@ -270,16 +274,35 @@
   background-color: #53d397;
 }
 
+.snare {
+  background-color: #AA0A08;
+}
+
+.percussions {
+  background-color: #F8333C;
+}
+
 .guitar {
   background-color: #fbb901;
 }
 
+.kick {
+  background-color: #1F215D;
+}
+
+.bass {
+  background-color: #383838;
+}
 .drum {
   background-color: #00a8b5;
 }
 
 .voice {
   background-color: #f30e5c;
+}
+
+.fx {
+  background-color: #256EFF;
 }
 
 /* pending tracks */

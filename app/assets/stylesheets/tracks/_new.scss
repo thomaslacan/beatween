@@ -1,0 +1,40 @@
+.container-song {
+  padding-top: 50px;
+}
+
+.wrapper-song {
+  background-size: cover;
+  background-image: url(https://images.pexels.com/photos/157557/pexels-photo-157557.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940), linear-gradient(#fff, #383838);
+  text-align: center;
+  padding: 30px 30px 30px 30px;
+}
+
+h3 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: 700;
+}
+
+
+.my-button {
+  background-color: white;
+  border-radius: 20px;
+  border: 2px solid #29934A;
+  color: #29934A;
+  transition: 1.5s;
+}
+
+.my-button:hover {
+  background-color: #29934A;
+  border-radius: 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.track_uploaded_file {
+  border: 2px red;
+}

@@ -39,6 +39,7 @@ export default class Track {
     const muteBtn = this.node.querySelector('.mute')
     muteBtn.addEventListener('click', (event) => {
       this.mute(muteBtn);
+      event.currentTarget.classList.toggle('mute-on')
     })
     const soloBtn = this.node.querySelector('.solo')
     soloBtn.addEventListener('click', (event) => {
