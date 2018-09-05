@@ -28,10 +28,11 @@
                   <%= song.description %>
                 </div>
               </div>
-              <% if song.song_tracks.count <= 1 %>
-                <%= song.song_tracks.count %> Pending track
+              <% if song.song_tracks.count == 0 %>
+              <% elsif song.song_tracks.count == 1 %>
+                <p class="pending-tracks-on-profil"> <%= song.song_tracks.count %> Pending track<i class="fas fa-headphones-alt"></i></p>
               <% else %>
-                <%= song.song_tracks.count %> Pending tracks
+                <p class="pending-tracks-on-profil"> <%= song.song_tracks.count %> Pending tracks<i class="fas fa-headphones-alt"></i></p>
               <% end %>
               <div class="user-song-card-metada">
                 <span class="user-song-card-bpm">
