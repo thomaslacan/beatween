@@ -173,7 +173,7 @@ track11 = Track.create!(user: user4, bpm: 100, description: "voice", instrument_
 # GOOD FEELINGS
 
 track20 = Track.create!(user: user1, bpm: 129, description: "Voice", instrument_id: instrument50, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1536063560/Voice_M.mp3" )
-track19 = Track.create!(user: user1, bpm: 129, description: "Voic FX", instrument_id: instrument50, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1536063744/Voice_FX.mp3" )
+track19 = Track.create!(user: user1, bpm: 129, description: "Voice FX", instrument_id: instrument50, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1536063744/Voice_FX.mp3" )
 track18 = Track.create!(user: user1, bpm: 129, description: "Synth", instrument_id: instrument8, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1536063815/Synth.mp3" )
 track14 = Track.create!(user: user1, bpm: 129, description: "Snare", instrument_id: instrument21, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1536063832/Snare.mp3" )
 track13 = Track.create!(user: user11, bpm: 129, description: "Percussions", instrument_id: instrument51, remote_uploaded_file_url: "https://res.cloudinary.com/dae1kvpyn/video/upload/v1536063918/Percussion.mp3" )
