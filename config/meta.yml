@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "Beatween"
+meta_title: "Beatween - The creative music tool"
+meta_description: "the world's music studio"
+meta_image: "cover.png"                       # should exist in `app/assets/images/`
+twitter_account: "@beatween_twitter_account"   # required for Twitter Cards
