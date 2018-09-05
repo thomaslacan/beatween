@@ -8,3 +8,24 @@ body {
   background-color: #fff;
   min-height: 100vh;
 }
+
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.login-inner-container {
+  background-color: rgb(37, 41, 46);
+  padding: 30px 30px;
+  color: white;
+  border-radius: 5px;
+  width: 30vw;
+}
+
+.submit-login {
+  color: black;
+}
