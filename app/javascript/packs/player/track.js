@@ -74,16 +74,16 @@ export default class Track {
   displayBuffer(buff) {
     const canvas = this.canvas
     const context = canvas.getContext('2d')
-    var drawLines = 10000;
+    var drawLines = 20000;
     var leftChannel = buff.getChannelData(0); // Float32Array describing left channel
-    var lineOpacity = 400 / leftChannel.length  ;
+    var lineOpacity = 800 / leftChannel.length  ;
     context.save();
     context.fillStyle = 'rgba(0,0,0,0)' ;
-    context.fillRect(0,0,400,75 );
-    context.strokeStyle = '#fff';
+    context.fillRect(0,0,100,75 );
+    context.strokeStyle = '#24292E';
     context.globalCompositeOperation = 'lighter';
     context.translate(0,75 / 2);
-    //context.globalAlpha = 0.6 ; // lineOpacity ;
+    context.globalAlpha = 0.6 ; // lineOpacity ;
     context.lineWidth=2;
     var totallength = leftChannel.length;
     var eachBlock = Math.floor(totallength / drawLines);
