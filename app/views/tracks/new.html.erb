@@ -7,22 +7,9 @@
         <div class="form-content">
           <%= simple_form_for [@song, @track] do |f| %>
           <%= f.input :description %>
-          <%= f.input :uploaded_file, input_html: {class: "track_uploaded_file"} %>
+          <%= f.input :uploaded_file %>
           <%= f.input :uploaded_file_cache, as: :hidden %>
-
-
-
-          <input type="file" id="track_uploaded_file"/>
-          <%= f.button :submit, "Add Your Track", class: "my-button" %>
-
-
-
-
-          <!-- BUTTON ADD -->
-
-
-
-            <!-- BUTTON BACK -->
+          <%= f.button :button, "Add Your Track", class: "my-button".html_safe, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Uploading..."} %>
           <%end%>
           </div>
         </div>
