@@ -1,3 +1,14 @@
+.pending-tracks-count {
+  color: #fcf3ca;
+  padding: 10px 15px;
+  background-color: #fc3c3c;
+  border: 2px solid #fcf3ca;
+  font-weight: 700;
+  width: 200px;
+  border-radius: 3px;
+  text-align: center;
+}
+
 .user-description {
   display: flex;
   align-items: center;
@@ -23,6 +34,7 @@
   flex-direction: column;
   align-items: space-between;
   justify-content: space-between;
+  position: relative;
 }
 
 .user-song-card:hover {

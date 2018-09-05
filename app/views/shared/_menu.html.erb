@@ -15,9 +15,31 @@
     </div>
 
     <!-- add a song -->
-    <div id="menu-add-song">
-      <%= link_to 'Add a song', new_song_path, class: 'btn btn-default' %>
-    </div>
+    <% if user_signed_in? %>
+      <div id="menu-add-song">
+        <%= link_to 'Add a song', new_song_path, class: 'btn btn-default' %>
+      </div>
+    <% end %>
+
+    <!-- Pending tracks -->
+    <% if user_signed_in? %>
+      <div class="menu-pending-tracks">
+        <div id="bell"><i class="fas fa-microphone"></i></div>
+        <% @i = 0 %>
+        <% current_user.songs.each do |song| %>
+          <% song.song_tracks.each do |songtrack| %>
+            <% @i += 1 if songtrack.status == 'pending' %>
+          <% end %>
+        <% end %>
+        <%= link_to user_path(current_user, anchor: 'my-songs') do %>
+          <% if @i > 0 %>
+            <div id="notifications">
+              <%= @i %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
 
     <!-- dropdown menu -->
     <div id="menu-menu">

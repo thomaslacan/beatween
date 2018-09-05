@@ -9,7 +9,7 @@
       <%= cl_image_tag @user.photo, height: 260, width: 260, crop: :fill, class: "img-circle" %>
     </div>
   </div>
-  <div class="user-songs">
+  <div class="user-songs" id="my-songs">
     <% if @user == current_user %>
       <h3>My Songs</h3>
     <% else %>
@@ -31,9 +31,13 @@
               <% if @user == current_user %>
                 <% if song.song_tracks.where(status: 'pending').count == 0 %>
                 <% elsif song.song_tracks.where(status: 'pending').count == 1 %>
-                  <%= song.song_tracks.where(status: 'pending').count %> Pending track
+                  <div class="pending-tracks-count">
+                    <%= song.song_tracks.where(status: 'pending').count %> pending track
+                  </div>
                 <% else %>
-                  <%= song.song_tracks.where(status: 'pending').count %> Pending tracks
+                  <div class="pending-tracks-count">
+                    <%= song.song_tracks.where(status: 'pending').count %> pending tracks
+                  </div>
                 <% end %>
               <% end %>
               <div class="user-song-card-metada">
