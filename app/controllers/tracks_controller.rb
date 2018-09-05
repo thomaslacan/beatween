@@ -19,17 +19,6 @@ class TracksController < ApplicationController
     end
   end
 
-  # def edit
-  #   @track = Track.find(params[:id])
-  # end
-
-  # def update
-  #   @track = Track.find(params[:id])
-  #   @song = Song.find(params[:song_id])
-  #   @track.save
-  #   redirect_to song_path(@song)
-  # end
-
   private
 
   def track_params
