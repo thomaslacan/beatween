@@ -1,4 +1,3 @@
-console.log("Hello from src/browser.js");
 import Track from './track';
 import Player from './player';
 

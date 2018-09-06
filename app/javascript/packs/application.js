@@ -6,5 +6,6 @@ import {toggleContent} from './card.js';
 import {appendSearch} from './search.js';
 import  {switchColor} from './colorize.js';
 import "./player/browser.js";
+import "./tooltip.js";
 
 appendSearch();

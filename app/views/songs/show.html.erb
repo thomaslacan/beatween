@@ -51,10 +51,9 @@
                     <% @data_url = song_track.track.uploaded_file.url%>
                     <% if @song.user == current_user %>
                       <li data-user=<%= song_track.track.user == current_user ? true : false %> data-url=<%= @data_url %> data-name=<%= song_track.track.description %> <% if song_track.track.user == current_user %> class="current-user" <% else %> class="other-user" <% end %>>
-                        <div class="border-left"></div>
-                        <div class="track-user-picture">
-                          <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
-                        </div>
+                        <div class="border-left hidden"><%= song_track.track.user.first_name %></div>
+                        <a href="#" data-toggle="tooltip" data-placement="left" class="tooltip-style track-user-picture" title= ><%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %></a>
+
                         <div class="wave-and-butt">
                           <canvas class="waveform" width="700px" height="75"></canvas>
                         </div>
@@ -153,3 +152,12 @@
     </div>
   </div>
 </div>
+<script type=“text/javascript”>
+
+   $(document).ready(function(){
+
+       $(‘[data-toggle=“tooltip”]’).tooltip();
+
+   });
+
+   </script>
