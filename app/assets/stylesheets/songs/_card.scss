@@ -50,14 +50,23 @@
 }
 
 .song-card-content-bg-fat {
-  height: 140px;
+  height: 120px;
+}
+
+.song-card-main-info {
+  margin-bottom: 20px;
+}
+
+.song-card-name {
+  font-size: 18px;
+  font-family: Raleway;
+  font-weight: 700;
 }
 
 .song-card-username {
   font-size: 18px;
   font-family: Raleway;
-  font-weight: 700;
-  line-height: 0.8em;
+  font-weight: 400;
 }
 
 .song-card-metada {

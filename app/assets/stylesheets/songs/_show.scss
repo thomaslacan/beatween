@@ -3,6 +3,10 @@
   color: #fff;
 }
 
+.delete-button {
+  margin-left: -10px;
+}
+
 .tracks-container {
   position: relative;
   margin-left: 30px;
@@ -76,13 +80,25 @@
 
 .controls-buttons {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
 }
 
 .controls-buttons button {
   background-color: #fff;
   border: 0px solid #000;
+}
+
+#download {
+  font-size: 32px;
+  margin-right: 16px;
+}
+
+#clear {
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 20px;
+  margin-right: 20px
 }
 
 .controls-buttons a {
@@ -159,25 +175,8 @@
   position: relative;
 }
 
-.current-user .border-left {
-  height: 75px;
-  width: 1px;
-  border: 6px solid #DE3C4B;
-  background-color: #DE3C4B;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.other-user .border-left {
-  height: 75px;
-  width: 1px;
-  border: 6px solid #8E9B90;
-  background-color: #8E9B90;
-  position: absolute;
-  opacity: 0.4;
-  left: 0;
-  top: 0;
+#track-container li:hover {
+  filter: hue-rotate(180deg);
 }
 
 #playhead {
@@ -262,12 +261,38 @@
 
 .track-user-picture img {
   position: absolute;
-  left: -60px;
+  left: -65px;
   top: 50%;
   transform: translateY(-50%);
-  box-shadow: 1px 1px 3px #474a56;
   border-radius: 50%;
+  box-sizing: content-box;
 }
+
+.current-user .track-user-picture img {
+  border: 3px solid #6900ff;
+}
+
+.other-user .track-user-picture img {
+  border: 3px solid #FF1654;
+}
+
+
+// .border-left {
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+//   width: 100%;
+// }
+
+// .current-user .border-left {
+//   background-color: #6900ff;
+//   border: 3px solid #6900ff;
+// }
+
+// .other-user .border-left {
+//   background-color: #4fb783;
+//   border: 3px solid #4fb783;
+// }
 
 /* other buttons */
 
@@ -305,19 +330,22 @@
 .track-description {
   right: 10px;
   top: -5px;
+  margin-right: 10px;
   border-radius: 5px;
+  padding: 5px 10px;
   font-weight: 200;
   font-size: 16px;
   color: #fff;
   opacity: 0.8;
   height: 40px;
-  width: 100px;
+  width: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 .synth {
-  background-color: #53d397;
+  background-color: #ff6d24;
 }
 
 .snare {
@@ -340,7 +368,7 @@
   background-color: #383838;
 }
 .drum {
-  background-color: #00a8b5;
+  background-color: #e95280;
 }
 
 .voice {

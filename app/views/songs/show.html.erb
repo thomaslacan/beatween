@@ -15,12 +15,18 @@
     </div>
     <!-- player controls -->
     <div class="player-controls">
-      <div class="controls-buttons">
-        <button id="clear">Clear solos</button>
-        <div id="download"><%= link_to 'Download project', @download_link %></div>
-      </div>
       <div class="song-metadata">
         Made with <i class="fas fa-heart"></i> at <%= @song.bpm %> bpm | <i class="fas fa-clock"></i> <%= @minutes %>:<%= @seconds %> | <i class="fas fa-music"></i> <%= @song.genre.name %>
+      </div>
+      <div class="controls-buttons">
+        <div id="download">
+          <%= link_to @download_link do %>
+            <i class="fas fa-download"></i>
+          <% end %>
+        </div>
+        <button id="clear">
+          Clear solos
+        </button>
       </div>
     </div>
   </div>
@@ -44,11 +50,11 @@
                   <% if song_track.status != 'pending' %>
                     <% @data_url = song_track.track.uploaded_file.url%>
                     <% if @song.user == current_user %>
-                      <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> <% if song_track.track.user == current_user %> class="current-user" <% else %> class="other-user" <% end %>>
+                      <li data-user=<%= song_track.track.user == current_user ? true : false %> data-url=<%= @data_url %> data-name=<%= song_track.track.description %> <% if song_track.track.user == current_user %> class="current-user" <% else %> class="other-user" <% end %>>
+                        <div class="border-left"></div>
                         <div class="track-user-picture">
                           <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
                         </div>
-                        <div class="border-left"></div>
                         <div class="wave-and-butt">
                           <canvas class="waveform" width="700px" height="75"></canvas>
                         </div>
@@ -66,7 +72,7 @@
                         </div>
                       </li>
                     <% elsif song_track.track.user == current_user %>
-                      <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="current-user" >
+                      <li data-user=true data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="current-user" >
                         <div class="border-left"></div>
                         <div class="wave-and-butt">
                           <canvas class="waveform" width="700px" height="75"></canvas>
@@ -88,7 +94,7 @@
                         </div>
                       </li>
                     <% else %>
-                      <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="other-user">
+                      <li data-user=false data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="other-user">
                         <div class="border-left"></div>
                         <div class="wave-and-butt">
                           <canvas class="waveform" width="700px" height="75"></canvas>

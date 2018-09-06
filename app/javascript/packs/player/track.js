@@ -6,7 +6,8 @@ export default class Track {
     this.node = node;
     this.url = node.dataset.url;
     this.name = node.dataset.name;
-    this.canvas = node.querySelector('canvas')
+    this.user = node.dataset.user;
+    this.canvas = node.querySelector('canvas');
     this.audioContext = audioContext;
     this.nodeGain = audioContext.createGain();
     this.source;
@@ -74,16 +75,20 @@ export default class Track {
   displayBuffer(buff) {
     const canvas = this.canvas
     const context = canvas.getContext('2d')
-    var drawLines = 20000;
+    var drawLines = 5000;
     var leftChannel = buff.getChannelData(0); // Float32Array describing left channel
     var lineOpacity = 800 / leftChannel.length  ;
     context.save();
     context.fillStyle = 'rgba(0,0,0,0)' ;
     context.fillRect(0,0,100,75 );
-    context.strokeStyle = '#24292E';
+    if (this.user === "true") {
+      context.strokeStyle = '#6900ff';
+    } else {
+      context.strokeStyle = '#FF1654';
+    };
     context.globalCompositeOperation = 'lighter';
     context.translate(0,75 / 2);
-    context.globalAlpha = 0.6 ; // lineOpacity ;
+    context.globalAlpha = 1 ; // lineOpacity ;
     context.lineWidth=2;
     var totallength = leftChannel.length;
     var eachBlock = Math.floor(totallength / drawLines);
