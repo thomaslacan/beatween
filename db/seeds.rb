@@ -158,16 +158,16 @@ p "Creating tracks..."
 
 # HARDER BETTER FASTER STRONGER
 
-track1 = Track.create!(user: user2, bpm: 100, description: "Drum 1", instrument_id: instrument1, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139510/Drum_1.m4a" )
-track2 = Track.create!(user: user2, bpm: 100, description: "Drum 2", instrument_id: instrument2, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139511/Drum_2.m4a" )
-track3 = Track.create!(user: user3, bpm: 100, description: "Drum 3", instrument_id: instrument3, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139505/Drum_3.m4a" )
-track4 = Track.create!(user: user2, bpm: 100, description: "Synth 1", instrument_id: instrument4, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139506/Synth_1.m4a" )
+track1 = Track.create!(user: user2, bpm: 100, description: "Drum", instrument_id: instrument1, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139510/Drum_1.m4a" )
+track2 = Track.create!(user: user2, bpm: 100, description: "Drum", instrument_id: instrument2, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139511/Drum_2.m4a" )
+track3 = Track.create!(user: user3, bpm: 100, description: "Drum", instrument_id: instrument3, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139505/Drum_3.m4a" )
+track4 = Track.create!(user: user2, bpm: 100, description: "Synth", instrument_id: instrument4, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139506/Synth_1.m4a" )
 track5 = Track.create!(user: user2, bpm: 100, description: "Outro Guitar", instrument_id: instrument5, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139523/Outro_Guitar.m4a" )
-track6 = Track.create!(user: user2, bpm: 100, description: "Synth 2", instrument_id: instrument6, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139503/Synth_3.m4a" )
-track7 = Track.create!(user: user2, bpm: 100, description: "Synth 3", instrument_id: instrument7, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139504/Synth_2.m4a" )
-track8 = Track.create!(user: user3, bpm: 100, description: "Synth 4", instrument_id: instrument8, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139532/Outro_Synth.m4a" )
-track9 = Track.create!(user: user4, bpm: 100, description: "Synth 5", instrument_id: instrument9, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139503/Synth_5_-_Other.m4a" )
-track10 = Track.create!(user: user2, bpm: 100, description: "Synt 6", instrument_id: instrument10, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139503/Synth_5_-_Other.m4a" )
+track6 = Track.create!(user: user2, bpm: 100, description: "Synth", instrument_id: instrument6, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139503/Synth_3.m4a" )
+track7 = Track.create!(user: user2, bpm: 100, description: "Synth", instrument_id: instrument7, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139504/Synth_2.m4a" )
+track8 = Track.create!(user: user3, bpm: 100, description: "Synth", instrument_id: instrument8, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139532/Outro_Synth.m4a" )
+track9 = Track.create!(user: user4, bpm: 100, description: "Synth", instrument_id: instrument9, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139503/Synth_5_-_Other.m4a" )
+track10 = Track.create!(user: user2, bpm: 100, description: "Synt", instrument_id: instrument10, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139503/Synth_5_-_Other.m4a" )
 track11 = Track.create!(user: user4, bpm: 100, description: "Voice", instrument_id: instrument10, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139502/Daft_Punk_Sample.m4a" )
 
 # GOOD FEELINGS
