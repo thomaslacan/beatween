@@ -78,7 +78,6 @@ export default class Player {
     if (this.status === 'stop') {
       this.playHead();
       this.time = this.audioContext.currentTime;
-      console.log(this.time)
       this.tracks.forEach((track) => {
         console.log(this.audioContext.currentTime)
         track.play();
