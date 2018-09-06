@@ -167,7 +167,7 @@ track6 = Track.create!(user: user2, bpm: 100, description: "Synth", instrument_i
 track7 = Track.create!(user: user2, bpm: 100, description: "Synth", instrument_id: instrument7, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139504/Synth_2.m4a" )
 track8 = Track.create!(user: user3, bpm: 100, description: "Synth", instrument_id: instrument8, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139532/Outro_Synth.m4a" )
 track9 = Track.create!(user: user4, bpm: 100, description: "Synth", instrument_id: instrument9, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139503/Synth_5_-_Other.m4a" )
-track10 = Track.create!(user: user2, bpm: 100, description: "Synt", instrument_id: instrument10, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139503/Synth_5_-_Other.m4a" )
+track10 = Track.create!(user: user2, bpm: 100, description: "Synth", instrument_id: instrument10, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139503/Synth_5_-_Other.m4a" )
 track11 = Track.create!(user: user4, bpm: 100, description: "Voice", instrument_id: instrument10, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536139502/Daft_Punk_Sample.m4a" )
 
 # GOOD FEELINGS
@@ -176,7 +176,7 @@ track20 = Track.create!(user: user1, bpm: 129, description: "Voice", instrument_
 track19 = Track.create!(user: user1, bpm: 129, description: "Voice FX", instrument_id: instrument50, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536136709/Voice_FX.mp3" )
 track18 = Track.create!(user: user1, bpm: 129, description: "Synth", instrument_id: instrument8, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536136712/Synth.mp3" )
 track14 = Track.create!(user: user1, bpm: 129, description: "Snare", instrument_id: instrument21, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536136705/Snare.mp3" )
-track13 = Track.create!(user: user11, bpm: 129, description: "Percs", instrument_id: instrument51, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536136707/Percussion.mp3" )
+track13 = Track.create!(user: user11, bpm: 129, description: "Drum", instrument_id: instrument51, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536136707/Percussion.mp3" )
 track12 = Track.create!(user: user1, bpm: 129, description: "Kick", instrument_id: instrument23, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536136721/Kick.mp3" )
 track16 = Track.create!(user: user8, bpm: 129, description: "Guitar", instrument_id: instrument3, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536136712/Guitars.mp3" )
 track17 = Track.create!(user: user1, bpm: 129, description: "Fx", instrument_id: instrument31, remote_uploaded_file_url: "https://res.cloudinary.com/djmfvqjof/video/upload/v1536136717/Fx-time.mp3" )
