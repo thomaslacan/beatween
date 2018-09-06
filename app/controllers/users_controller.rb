@@ -7,6 +7,8 @@ class UsersController < ApplicationController
 
   def show
     authorize @user
+    @colabs = current_user.colabs.where.not(user_id: current_user)
+    @colabs = @colabs.uniq
   end
 
   private
