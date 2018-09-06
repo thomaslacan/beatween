@@ -1,19 +1,19 @@
 <div class="wrapper-song">
   <div class="container-song">
-    <div class="song-form">
-      <h3>Add A Track</h3>
-      <div class="song-form-layout-container">
-       <div class="form-container-new">
-        <div class="form-content">
+    <div class="song-form new-track-form">
+      <h3>Add a track</h3>
+      <div class="song-form-layout-container new-track-form-layout">
+       <div class="form-container-new new-track-form-container">
+        <div class="form-content new-track-form">
           <%= simple_form_for [@song, @track] do |f| %>
-            <div>
+            <div class="input-description">
               <%= f.input :description %>
             </div>
-            <div>
+            <div class="input-upload">
               <%= f.input :uploaded_file %>
               <%= f.input :uploaded_file_cache, as: :hidden %>
             </div>
-            <div>
+            <div class="input-button">
               <%= f.button :button, "Add Your Track", class: "my-button".html_safe, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Uploading..."} %>
             </div>
           <%end%>
