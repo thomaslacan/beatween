@@ -33,8 +33,10 @@
       <div class="tracks-container">
         <div class="playhead-container">
           <div id="playhead">
-            <div class="playhead-top"></div>
-            <div class="playhead-bottom"></div>
+            <% if @song_tracks.where(status: 'active').count > 0 %>
+              <div class="playhead-top"></div>
+              <div class="playhead-bottom"></div>
+            <% end %>
           </div>
             <ul class="tracks list-unstyled" id="track-container">
               <% @song_tracks.each do |song_track| %>
@@ -65,6 +67,7 @@
                       </li>
                     <% elsif song_track.track.user == current_user %>
                       <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="current-user" >
+                        <div class="border-left"></div>
                         <div class="wave-and-butt">
                           <canvas class="waveform" width="700px" height="75"></canvas>
                         </div>
@@ -86,6 +89,7 @@
                       </li>
                     <% else %>
                       <li data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="other-user">
+                        <div class="border-left"></div>
                         <div class="wave-and-butt">
                           <canvas class="waveform" width="700px" height="75"></canvas>
                         </div>
