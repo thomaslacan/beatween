@@ -39,8 +39,10 @@
       <div class="tracks-container">
         <div class="playhead-container">
           <div id="playhead">
-            <div class="playhead-top"></div>
-            <div class="playhead-bottom"></div>
+            <% if @song_tracks.where(status: 'active').count > 0 %>
+              <div class="playhead-top"></div>
+              <div class="playhead-bottom"></div>
+            <% end %>
           </div>
             <ul class="tracks list-unstyled" id="track-container">
               <% @song_tracks.each do |song_track| %>
