@@ -32,11 +32,11 @@
                 <% if song.song_tracks.where(status: 'pending').count == 0 %>
                 <% elsif song.song_tracks.where(status: 'pending').count == 1 %>
                   <div class="pending-tracks-count">
-                    <%= song.song_tracks.where(status: 'pending').count %> pending track
+                    <%= song.song_tracks.where(status: 'pending').count %> Pending track
                   </div>
                 <% else %>
                   <div class="pending-tracks-count">
-                    <%= song.song_tracks.where(status: 'pending').count %> pending tracks
+                    <%= song.song_tracks.where(status: 'pending').count %> Pending tracks
                   </div>
                 <% end %>
               <% end %>
@@ -71,6 +71,18 @@
                   <%= song.description %>
                 </div>
               </div>
+              <% if @user == current_user %>
+                <% if song.tracks.where(user: current_user).where(song_tracks: {status: 'active'}).count == 0 %>
+                <% elsif song.tracks.where(user: current_user).where(song_tracks: {status: 'active'}).count == 1 %>
+                  <div class="active-tracks-count">
+                    <%= song.tracks.where(user: current_user).where(song_tracks: {status: 'active'}).count %> Active track
+                  </div>
+                <% else %>
+                  <div class="active-tracks-count">
+                    <%= song.tracks.where(user: current_user).where(song_tracks: {status: 'active'}).count %> Active tracks
+                  </div>
+                <% end %>
+              <% end %>
               <div class="user-song-card-metada">
                 <span class="user-song-card-bpm">
                   <i class="fas fa-heartbeat"></i> <%= song.bpm %>
