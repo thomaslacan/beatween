@@ -73,6 +73,9 @@
                     <% elsif song_track.track.user == current_user %>
                       <li data-user=true data-url=<%= @data_url %> data-name=<%= song_track.track.description %> class="current-user" >
                         <div class="border-left hidden"><%= song_track.track.user.first_name %></div>
+                        <div class="track-user-picture">
+                          <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
+                        </div>
                         <div class="wave-and-butt">
                           <canvas class="waveform" width="700px" height="75"></canvas>
                         </div>
@@ -82,9 +85,6 @@
                           <button class="solo">S</button>
                         </div>
                         <div class="exit-controls">
-                          <div class="track-user-picture">
-                            <%= cl_image_tag song_track.track.user.photo, width: 50, height: 50, crop: :fill %>
-                          </div>
                           <div class="delete-button">
                             <%= link_to song_track_path(song_track), method: :delete do %>
                               <i class="far fa-trash-alt"></i>
