@@ -10,6 +10,7 @@ export default class Player {
     this.tracks = [];
     this.time = 0
     this.clickPosition = 0
+    this.offset = 0
     this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
     nodes.forEach((node) => {
       const track = new Track(node, this.audioContext, this);
@@ -39,6 +40,7 @@ export default class Player {
         if (this.status === 'stop') {
           this.tracks.forEach((track) => {
             track.play(0, track.buffer.duration/(track.canvas.clientWidth/this.clickPosition))
+            this.time = this.audioContext.currentTime;
             this.status = 'running'
           });
         } else {
@@ -48,9 +50,11 @@ export default class Player {
           this.tracks.forEach((track) => {
             track.decode();
             track.play(0, track.buffer.duration/(track.canvas.clientWidth/this.clickPosition));
+            this.time = this.audioContext.currentTime;
             this.status = 'running'
           })
         }
+        this.stopHead();
         this.playHead(this.clickPosition);
       }
     });
@@ -63,8 +67,12 @@ export default class Player {
       this.play();
       if (this.status === 'paused') {
         play.innerHTML = '<i class="fas fa-play-circle"></i>';
+        this.stopHead();
+        this.playHead(this.clickPosition);
       } else if (this.status === 'running') {
         play.innerHTML = '<i class="fas fa-pause-circle"></i>';
+        this.stopHead();
+        this.playHead(this.clickPosition);
       }
     });
 
@@ -91,6 +99,7 @@ export default class Player {
       this.stopHead();
     } else if (this.status === 'paused') {
       console.log(this.time)
+      this.stopHead();
       this.playHead();
       this.audioContext.resume();
       this.status = 'running'
@@ -178,9 +187,8 @@ export default class Player {
       });
     } else {
       if (position) {
-        // fix playhead position
-        let newPos = pos + position - 10
-        elem.style.left = newPos + 'px';
+
+        elem.style.left = pos + position + 'px';
       } else {
         elem.style.left = pos + 'px';
       }
